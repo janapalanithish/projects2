@@ -1,0 +1,172 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Nexus.AI | The AI Command Center</title>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;600;800&family=Fira+Code:wght@400;500&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <link rel="stylesheet" href="style.css">
+</head>
+<body data-page="home">
+
+    <nav class="navbar">
+        <div class="nav-container">
+            <div class="logo">NEXUS<span>.AI</span></div>
+            <div class="nav-links">
+                <a href="index.html" class="active">Home</a>
+                <a href="#feat-compare">Features</a>
+                <a href="compare.html">Compare</a>
+                <a href="generator.html">Generator</a>
+                <a href="agent.html">Agent</a>
+            </div>
+            <a href="agent.html" class="btn btn-primary">Try Agent</a>
+        </div>
+    </nav>
+
+    <section class="hero-section">
+        <div class="hero-bg-glow"></div>
+        <div class="container">
+            <p style="color:var(--accent); font-weight:600; letter-spacing:1px; margin-bottom:1rem;">THE AI COMMAND CENTER</p>
+            <h1 class="hero-title">Stop Guessing.<br>Start <span style="color:var(--primary)">Engineering.</span></h1>
+            <p class="page-subtitle">Nexus helps you benchmark AI models, generate production-grade prompts via n8n workflows, and find the perfect tool for your specific sector.</p>
+            
+            <div class="hero-grid">
+                <div class="nav-card" onclick="document.getElementById('feat-compare').scrollIntoView({behavior: 'smooth'})">
+                    <i class="fa-solid fa-scale-balanced"></i>
+                    <h3>Compare Models</h3>
+                    <p>Head-to-head benchmarks.</p>
+                </div>
+                <div class="nav-card" onclick="document.getElementById('feat-generator').scrollIntoView({behavior: 'smooth'})">
+                    <i class="fa-solid fa-wand-magic-sparkles"></i>
+                    <h3>Prompt Generator</h3>
+                    <p>Engineered prompt templates.</p>
+                </div>
+                <div class="nav-card" onclick="document.getElementById('feat-agent').scrollIntoView({behavior: 'smooth'})">
+                    <i class="fa-solid fa-robot"></i>
+                    <h3>Nexus Agent</h3>
+                    <p>Your personal AI consultant.</p>
+                </div>
+                <div class="nav-card" onclick="document.getElementById('feat-sectors').scrollIntoView({behavior: 'smooth'})">
+                    <i class="fa-solid fa-briefcase"></i>
+                    <h3>By Sector</h3>
+                    <p>Tailored industry insights.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section id="feat-compare" class="feature-section">
+        <div class="container feature-container">
+            <div class="feature-text">
+                <div class="feature-icon-box"><i class="fa-solid fa-scale-balanced"></i></div>
+                <h2>The Comparison Engine 
+
+[Image of Data Visualization Dashboard]
+</h2>
+                <p class="feature-desc">
+                    Not all models are created equal. Nexus aggregates real-time performance data to help you choose the right engine for the job. We cut through the hype to show you raw metrics.
+                </p>
+                <ul class="feature-list">
+                    <li><i class="fa-solid fa-check"></i> <strong>Head-to-Head Benchmarks:</strong> Compare GPT-4, Claude 3.5, and Gemini 1.5 side-by-side.</li>
+                    <li><i class="fa-solid fa-check"></i> <strong>Context Window Analysis:</strong> See which models can handle large documents (100k+ tokens).</li>
+                    <li><i class="fa-solid fa-check"></i> <strong>Cost vs. Quality:</strong> Find the best "bang for your buck" model for your budget.</li>
+                </ul>
+                <a href="compare.html" class="btn btn-outline">View Benchmarks <i class="fa-solid fa-arrow-right"></i></a>
+            </div>
+            <div class="feature-visual">
+                <div class="dummy-chart">
+                    <div class="bar" style="height: 80%"><span>GPT-4o</span></div>
+                    <div class="bar" style="height: 95%"><span>Claude 3.5</span></div>
+                    <div class="bar" style="height: 60%"><span>Llama 3</span></div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section id="feat-generator" class="feature-section alt-bg">
+        <div class="container feature-container reverse">
+            <div class="feature-text">
+                <div class="feature-icon-box" style="color:var(--accent); border-color:var(--accent);"><i class="fa-solid fa-wand-magic-sparkles"></i></div>
+                <h2>Prompt Engineering Studio</h2>
+                <p class="feature-desc">
+                    Stop writing "write me a blog post." Use our n8n-powered logic to build structural, high-fidelity system prompts that get production-ready results.
+                </p>
+                <ul class="feature-list">
+                    <li><i class="fa-solid fa-check"></i> <strong>Role-Based Architecture:</strong> Assigns expert personas (e.g., "Senior React Developer").</li>
+                    <li><i class="fa-solid fa-check"></i> <strong>Constraint Injection:</strong> Forces the AI to follow strict formatting rules and avoid hallucinations.</li>
+                    <li><i class="fa-solid fa-check"></i> <strong>JSON Output Mode:</strong> Get raw JSON prompts ready for API integration.</li>
+                </ul>
+                <a href="generator.html" class="btn btn-outline">Start Building <i class="fa-solid fa-arrow-right"></i></a>
+            </div>
+            <div class="feature-visual code-preview">
+                <pre>
+<span style="color:#c678dd">ACT AS</span> Senior Developer
+<span style="color:#61afef">TASK:</span> Write Python Script
+<span style="color:#e5c07b">CONSTRAINTS:</span> 
+- PEP8 Standards
+- No External Libs
+- Add Comments
+                </pre>
+            </div>
+        </div>
+    </section>
+
+    <section id="feat-agent" class="feature-section">
+        <div class="container feature-container">
+            <div class="feature-text">
+                <div class="feature-icon-box"><i class="fa-solid fa-robot"></i></div>
+                <h2>The Nexus Agent</h2>
+                <p class="feature-desc">
+                    Overwhelmed by choices? Our integrated AI consultant analyzes your specific problem and recommends the exact tool stack you need.
+                </p>
+                <ul class="feature-list">
+                    <li><i class="fa-solid fa-check"></i> <strong>Problem Diagnosis:</strong> "I need to analyze a 500-page PDF."</li>
+                    <li><i class="fa-solid fa-check"></i> <strong>Smart Routing:</strong> "Use Gemini 1.5 Pro for its 1M context window."</li>
+                    <li><i class="fa-solid fa-check"></i> <strong>Session Memory:</strong> Remembers your project details during the chat.</li>
+                </ul>
+                <a href="agent.html" class="btn btn-outline">Talk to Agent <i class="fa-solid fa-arrow-right"></i></a>
+            </div>
+            <div class="feature-visual chat-preview">
+                <div class="chat-bubble ai">Hello! Describe your task.</div>
+                <div class="chat-bubble user">I need to generate a logo.</div>
+                <div class="chat-bubble ai">Recommendation: Midjourney v6.</div>
+            </div>
+        </div>
+    </section>
+
+    <section id="feat-sectors" class="feature-section alt-bg">
+        <div class="container feature-container reverse">
+            <div class="feature-text">
+                <div class="feature-icon-box" style="color:var(--warning); border-color:var(--warning);"><i class="fa-solid fa-briefcase"></i></div>
+                <h2>Sector Intelligence</h2>
+                <p class="feature-desc">
+                    AI isn't one-size-fits-all. We've curated specific workflows and model recommendations for key industries, optimizing your workflow for your domain.
+                </p>
+                <ul class="feature-list">
+                    <li><i class="fa-solid fa-check"></i> <strong>Developers:</strong> Best models for Python/JS coding & debugging.</li>
+                    <li><i class="fa-solid fa-check"></i> <strong>Marketing:</strong> Tools for SEO, copy generation, and ad creatives.</li>
+                    <li><i class="fa-solid fa-check"></i> <strong>Education:</strong> Tutors, summarizers, and research assistants.</li>
+                </ul>
+                <a href="sectors.html" class="btn btn-outline">Explore Sectors <i class="fa-solid fa-arrow-right"></i></a>
+            </div>
+            <div class="feature-visual">
+                <div class="sector-grid-mini">
+                    <div class="mini-card"><i class="fa-solid fa-code"></i> Dev</div>
+                    <div class="mini-card"><i class="fa-solid fa-bullhorn"></i> Marketing</div>
+                    <div class="mini-card"><i class="fa-solid fa-graduation-cap"></i> Edu</div>
+                    <div class="mini-card"><i class="fa-solid fa-pen-nib"></i> Write</div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <footer class="site-footer">
+        <div class="container">
+            <p>&copy; 2024 Nexus.AI Command Center. Engineered for Performance.</p>
+        </div>
+    </footer>
+
+    <script src="script.js"></script>
+</body>
+</html>

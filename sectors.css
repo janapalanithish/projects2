@@ -1,0 +1,115 @@
+/* --- SECTOR PAGE STYLES --- */
+
+/* 1. Main Layout & Typography */
+body[data-page="sectors"] {
+    background-color: #0B0F19; /* Deep dark background */
+    font-family: 'Inter', sans-serif;
+    color: #ffffff;
+}
+
+.header-section {
+    text-align: center;
+    margin: 4rem 0 3rem;
+    padding: 0 1rem;
+}
+
+.header-section h1 {
+    font-size: 2.5rem;
+    font-weight: 700;
+    margin-bottom: 0.5rem;
+    background: linear-gradient(135deg, #fff 0%, #a5b4fc 100%);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+}
+
+.header-section p {
+    color: #94a3b8;
+    font-size: 1.1rem;
+}
+
+/* 2. Grid Layout */
+.sector-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+    gap: 1.5rem;
+    padding: 0 1rem 4rem;
+    max-width: 1200px;
+    margin: 0 auto;
+}
+
+/* 3. Card Styling */
+.sector-card {
+    background: #151B2B; /* Slightly lighter than body */
+    border: 1px solid #1E293B;
+    border-radius: 16px;
+    padding: 2rem;
+    cursor: pointer;
+    transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+    position: relative;
+    overflow: hidden;
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    height: 100%;
+}
+
+
+/* Hover Effect: Lift & Glow */
+.sector-card:hover {
+    transform: translateY(-5px);
+    border-color: #6366f1;
+    box-shadow: 0 10px 30px -10px rgba(99, 102, 241, 0.2);
+}
+
+/* 4. Icon Boxes (The Colorful Parts) */
+.icon-box {
+    width: 56px;
+    height: 56px;
+    border-radius: 12px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 1.5rem;
+    margin-bottom: 1.5rem;
+    transition: transform 0.3s ease;
+}
+
+.sector-card:hover .icon-box {
+    transform: scale(1.1) rotate(5deg);
+}
+
+/* Specific Colors */
+.icon-box.blue   { background: rgba(59, 130, 246, 0.15); color: #60a5fa; }
+.icon-box.purple { background: rgba(139, 92, 246, 0.15); color: #a78bfa; }
+.icon-box.green  { background: rgba(16, 185, 129, 0.15); color: #34d399; }
+.icon-box.orange { background: rgba(249, 115, 22, 0.15); color: #fb923c; }
+.icon-box.grey   { background: rgba(148, 163, 184, 0.15); color: #cbd5e1; }
+
+/* 5. Text Styling inside Cards */
+.sector-card h3 {
+    font-size: 1.25rem;
+    font-weight: 600;
+    margin-bottom: 0.75rem;
+    color: #fff;
+}
+
+.sector-card p {
+    font-size: 0.95rem;
+    color: #94a3b8;
+    line-height: 1.6;
+    margin-bottom: 1.5rem;
+    flex-grow: 1; /* Pushes arrow to bottom */
+}
+
+/* 6. Arrow Icon */
+.sector-card .arrow {
+    align-self: flex-end; /* Align to right */
+    color: #475569;
+    font-size: 1.2rem;
+    transition: color 0.3s, transform 0.3s;
+}
+
+.sector-card:hover .arrow {
+    color: #6366f1;
+    transform: translateX(5px);
+}

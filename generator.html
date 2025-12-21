@@ -1,0 +1,101 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Nexus Studio | Prompt Architect</title>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=Fira+Code:wght@400;500&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <link rel="stylesheet" href="style.css"> 
+    <link rel="stylesheet" href="generator.css"> 
+</head>
+<body data-page="studio">
+
+    <nav class="navbar">
+        <div class="nav-container">
+            <div class="logo">NEXUS<span>.AI</span></div>
+            <div class="nav-links">
+                <a href="index.html">Home</a>
+                <a href="compare.html">Compare</a>
+                <a href="generator.html" class="active">Studio</a>
+                <a href="agent.html">Agent</a>
+                <a href="sectors.html">Sectors</a>
+            </div>
+        </div>
+    </nav>
+
+    <div class="studio-container">
+        
+        <aside class="studio-sidebar">
+            <div class="sidebar-header">
+                <h3><i class="fa-solid fa-layer-group"></i> Modules</h3>
+            </div>
+            
+            <div class="task-list">
+                <button class="task-btn active" onclick="loadTask('image')">
+                    <i class="fa-solid fa-image"></i> Image Gen
+                </button>
+                <button class="task-btn" onclick="loadTask('code')">
+                    <i class="fa-solid fa-code"></i> Code Gen
+                </button>
+                <button class="task-btn" onclick="loadTask('content')">
+                    <i class="fa-solid fa-pen-fancy"></i> Content Creator
+                </button>
+                <button class="task-btn" onclick="loadTask('fixer')">
+                    <i class="fa-solid fa-wrench"></i> Prompt Fixer
+                </button>
+                <button class="task-btn" onclick="loadTask('idea')">
+                    <i class="fa-solid fa-lightbulb"></i> Idea Generator
+                </button>
+            </div>
+
+            <div class="advisor-widget" id="advisor-widget" style="display: none;">
+                <div class="advisor-header">
+                    <i class="fa-solid fa-robot"></i> Nexus Advisor
+                </div>
+                <div class="advisor-content">
+                    <div class="primary-model">
+                        <span class="badge">Recommended</span>
+                        <h4 id="rec-model-name">Midjourney v6</h4>
+                        <p id="rec-model-reason">Best for cinematic, artistic visuals</p>
+                    </div>
+                    <div class="alternatives">
+                        <small>Alternatives:</small>
+                        <ul id="rec-alts">
+                            </ul>
+                    </div>
+                </div>
+            </div>
+            </aside>
+        <main class="studio-workspace">
+            
+            <div class="workspace-header">
+                <h2 id="task-title">Image Generation</h2>
+                <p id="task-desc">Create ultra-realistic 4K visuals with engineered lighting and composition rules.</p>
+            </div>
+
+            <div class="form-container" id="dynamic-form">
+                </div>
+
+            <div class="action-area">
+                <button class="generate-btn" onclick="generatePrompt()">
+                    <i class="fa-solid fa-wand-magic-sparkles"></i> Engineer Prompt
+                </button>
+            </div>
+
+            <div class="console-wrapper">
+                <div class="console-header">
+                    <span><i class="fa-solid fa-terminal"></i> NEXUS_ENGINE_OUTPUT.json</span>
+                    <button class="copy-btn" onclick="copyToClipboard()"><i class="fa-regular fa-copy"></i> Copy JSON</button>
+                </div>
+                <div class="console-body">
+                    <pre id="output-console"><span class="comment">// Select a task and click Generate...</span></pre>
+                </div>
+            </div>
+
+        </main>
+    </div>
+
+    <script src="generator.js"></script>
+</body>
+</html>

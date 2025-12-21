@@ -1,0 +1,97 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Nexus.AI | Select Sector</title>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    
+    <link rel="stylesheet" href="style.css">
+</head>
+<body data-page="sectors">
+
+    <nav class="navbar">
+        <div class="nav-container">
+            <div class="logo">NEXUS<span>.AI</span></div>
+            <div class="nav-links">
+                <a href="index.html">Home</a>
+                <a href="compare.html">Compare</a>
+                <a href="generator.html">Generator</a>
+                <a href="agent.html">Agent</a>
+                <a href="sectors.html" class="active">Sectors</a>
+                <link rel="stylesheet" href="sectors.css">
+                
+            </div>
+        </div>
+    </nav>
+
+    <div class="container">
+        
+        <div class="header-section">
+            <h1>Choose Your Agent</h1>
+            <p>Select a specialized sector to optimize the AI's performance.</p>
+        </div>
+
+        <div class="sector-grid">
+            <div class="sector-card" onclick="selectSector('ecommerce')">
+                <div class="icon-box blue">
+                    <i class="fa-solid fa-cart-shopping"></i>
+                </div>
+                <h3>E-Commerce</h3>
+                <p>Generate product descriptions, ad copy, and store strategies.</p>
+                <div class="arrow"><i class="fa-solid fa-arrow-right"></i></div>
+            </div>
+
+            <div class="sector-card" onclick="selectSector('dev')">
+                <div class="icon-box purple">
+                    <i class="fa-solid fa-code"></i>
+                </div>
+                <h3>Development</h3>
+                <p>Write clean code, debug errors, and build full web layouts.</p>
+                <div class="arrow"><i class="fa-solid fa-arrow-right"></i></div>
+            </div>
+
+            <div class="sector-card" onclick="selectSector('writing')">
+                <div class="icon-box green">
+                    <i class="fa-solid fa-pen-nib"></i>
+                </div>
+                <h3>Content Writing</h3>
+                <p>Blog posts, essays, and creative storytelling assistance.</p>
+                <div class="arrow"><i class="fa-solid fa-arrow-right"></i></div>
+            </div>
+
+            <div class="sector-card" onclick="selectSector('data')">
+                <div class="icon-box orange">
+                    <i class="fa-solid fa-chart-line"></i>
+                </div>
+                <h3>Data Analysis</h3>
+                <p>Interpret complex data, formatting, and spreadsheet formulas.</p>
+                <div class="arrow"><i class="fa-solid fa-arrow-right"></i></div>
+            </div>
+            
+            <div class="sector-card" onclick="selectSector('general')">
+                <div class="icon-box grey">
+                    <i class="fa-solid fa-brain"></i>
+                </div>
+                <h3>General Assistant</h3>
+                <p>The standard Nexus AI model for everyday tasks.</p>
+                <div class="arrow"><i class="fa-solid fa-arrow-right"></i></div>
+            </div>
+
+        </div>
+    </div>
+
+    <script>
+        function selectSector(sector) {
+            // 1. Save the user's choice to the browser's memory
+            localStorage.setItem('nexus_selected_sector', sector);
+            
+            // 2. Redirect to the Chat Agent Page
+            // (Previously this was pointing to index.html, which was causing the loop)
+            window.location.href = 'agent.html'; 
+        }
+    </script>
+
+</body>
+</html>

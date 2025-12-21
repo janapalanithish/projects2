@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Nexus.AI | Compare</title>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;600;800&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <link rel="stylesheet" href="style.css">
+</head>
+<body data-page="compare">
+
+    <nav class="navbar">
+        <div class="nav-container">
+            <div class="logo">NEXUS<span>.AI</span></div>
+            <div class="nav-links">
+                <a href="index.html">Home</a>
+                <a href="compare.html" class="active">Compare</a>
+                <a href="generator.html">Generator</a>
+                <a href="agent.html">Agent</a>
+                <a href="sectors.html">Sectors</a>
+            </div>
+        </div>
+    </nav>
+
+    <div class="container">
+        <div class="section-header">
+            <h1 class="page-title">Model Comparison</h1>
+            <p class="page-subtitle">Live benchmarks and feature breakdown of top 10 LLMs.</p>
+        </div>
+
+        <div class="filter-bar">
+            <button class="filter-btn active" onclick="renderComparison('all')">All Models</button>
+            <button class="filter-btn" onclick="renderComparison('chat')">Chat / Reasoning</button>
+            <button class="filter-btn" onclick="renderComparison('code')">Coding</button>
+            <button class="filter-btn" onclick="renderComparison('image')">Image Gen</button>
+            <button class="filter-btn" onclick="renderComparison('data')">Data Analysis</button>
+        </div>
+
+        <div id="comparison-grid" class="models-grid">
+            </div>
+    </div>
+
+    <script src="script.js"></script>
+</body>
+</html>
