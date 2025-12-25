@@ -9,8 +9,6 @@
     <link rel="stylesheet" href="agent.css">
 </head>
 <body>
-    
-   
 
     <header>
         <div class="brand">
@@ -23,25 +21,20 @@
     </header>
 
     <div id="chat-container">
-        <div class="message ai">
-            <div class="avatar ai"><i class="fa-solid fa-bolt"></i></div>
-            <div class="content">
-                <strong>System Online.</strong><br>
-                Connected to n8n workflow. I preserve history locally and support markdown. How can I help?
-            </div>
         </div>
-    </div>
 
     <div class="input-area">
         <div class="input-group">
             <textarea id="user-input" placeholder="Type a message..." rows="1"></textarea>
             <button id="send-btn" title="Send"><i class="fa-solid fa-paper-plane"></i></button>
         </div>
+        
         <div class="legal-text" style="color: #64748b; font-size: 0.8rem; margin-top: 10px; display: flex; align-items: center; justify-content: center; gap: 6px;">
-    <i class="fa-solid fa-layer-group"></i> 
-    <span>Authorized for <b>Prompt Generation</b> only. General chat capabilities are restricted.</span>
-</div>
+            <i class="fa-solid fa-layer-group"></i> 
+            <span>Authorized for <b>Prompt Generation</b> only. General chat capabilities are restricted.</span>
+        </div>
     </div>
-<script src="agent.js"></script>
+
+    <script src="agent.js"></script>
 </body>
 </html>

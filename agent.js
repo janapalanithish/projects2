@@ -19,8 +19,9 @@ const userInput = document.getElementById('user-input');
 const sendBtn = document.getElementById('send-btn');
 const searchBar = document.getElementById('search-bar');
 
+// --- INITIALIZATION ---
 window.addEventListener('DOMContentLoaded', () => {
-    // Updated Welcome Message to clarify purpose
+    // 1. UPDATED WELCOME MESSAGE (The "Prompt Mode" Warning)
     addMessageToState('ai', "Nexus AI Online. System initialized.\n\n⚠️ **Mode: Prompt Engineering**\nI am a specialized agent designed solely for **generating and refining prompts**. Please describe the task or role you need a prompt for.");
 
     // Check limit immediately on load
@@ -129,31 +130,51 @@ function addMessageToState(role, text) {
     renderMessages(); 
 }
 
-// --- COPY FUNCTIONALITY ---
+function renderMessages(searchQuery = '') {
+    chatContainer.innerHTML = ''; 
 
-function copyToClipboard(msgId) {
-    // Find the message object in history
-    const msg = chatHistory.find(m => m.id === msgId);
-    if (!msg) return;
+    const filteredHistory = chatHistory.filter(msg => 
+        msg.text.toLowerCase().includes(searchQuery.toLowerCase())
+    );
 
-    // Use the modern Clipboard API
-    navigator.clipboard.writeText(msg.text).then(() => {
-        // Find the button to change its icon briefly
-        // Note: Since we re-render often, we look up by the onclick attribute or class context
-        // But a simpler DOM lookup is safer here:
-        const btn = document.querySelector(`button[onclick="copyToClipboard(${msgId})"]`);
-        if (btn) {
-            const originalIcon = btn.innerHTML;
-            btn.innerHTML = '<i class="fa-solid fa-check"></i>'; // Change to checkmark
-            btn.classList.add('copied');
-            
-            setTimeout(() => {
-                btn.innerHTML = '<i class="fa-regular fa-copy"></i>'; // Revert
-                btn.classList.remove('copied');
-            }, 2000);
+    if (filteredHistory.length === 0 && chatHistory.length > 0) {
+        chatContainer.innerHTML = `<div style="text-align:center; color:var(--text-muted); margin-top:20px;">No messages found matching "${searchQuery}"</div>`;
+        return;
+    }
+
+    filteredHistory.forEach(msg => {
+        const messageDiv = document.createElement('div');
+        messageDiv.className = `message ${msg.role}`;
+
+        let icon = msg.role === 'user' ? '<i class="fa-solid fa-user"></i>' : '<i class="fa-solid fa-bolt"></i>';
+        if (msg.role === 'error') icon = '<i class="fa-solid fa-circle-exclamation"></i>';
+
+        let formattedText = parseMarkdown(msg.text);
+
+        if (searchQuery) {
+            const regex = new RegExp(`(${searchQuery})`, 'gi');
+            formattedText = formattedText.replace(regex, '<span class="highlight">$1</span>');
         }
-    }).catch(err => {
-        console.error('Failed to copy: ', err);
+
+        // --- NEW: COPY BUTTON LOGIC ---
+        let copyButtonHtml = '';
+        if (msg.role === 'ai') {
+            copyButtonHtml = `
+                <button class="copy-btn" onclick="copyToClipboard(${msg.id})" title="Copy to clipboard">
+                    <i class="fa-regular fa-copy"></i>
+                </button>
+            `;
+        }
+
+        messageDiv.innerHTML = `
+            <div class="avatar ${msg.role}">${icon}</div>
+            <div class="content">
+                ${copyButtonHtml}
+                ${formattedText}
+            </div>
+        `;
+
+        chatContainer.appendChild(messageDiv);
     });
 }
 
@@ -163,6 +184,24 @@ function parseMarkdown(text) {
     safeText = safeText.replace(/\*\*(.*?)\*\*/g, '<strong>$1</strong>');
     safeText = safeText.replace(/\n/g, '<br>');
     return safeText;
+}
+
+// --- NEW: COPY FUNCTION ---
+function copyToClipboard(msgId) {
+    const msg = chatHistory.find(m => m.id === msgId);
+    if (!msg) return;
+
+    navigator.clipboard.writeText(msg.text).then(() => {
+        const btn = document.querySelector(`button[onclick="copyToClipboard(${msgId})"]`);
+        if (btn) {
+            btn.innerHTML = '<i class="fa-solid fa-check"></i>'; 
+            btn.classList.add('copied');
+            setTimeout(() => {
+                btn.innerHTML = '<i class="fa-regular fa-copy"></i>';
+                btn.classList.remove('copied');
+            }, 2000);
+        }
+    }).catch(err => console.error('Failed to copy: ', err));
 }
 
 function toggleInput(enabled) {

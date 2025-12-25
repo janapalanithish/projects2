@@ -97,7 +97,11 @@ header {
     max-width: 80%;
 }
 
-.message.ai .content { background: var(--bg-ai); border-top-left-radius: 2px; }
+.message.ai .content { 
+    background: var(--bg-ai); 
+    border-top-left-radius: 2px;
+    padding-right: 40px; /* Space for Copy Button */
+}
 .message.user .content { background: var(--bg-user); border-top-right-radius: 2px; }
 .message.error .content { background: rgba(239, 68, 68, 0.2); border: 1px solid rgba(239, 68, 68, 0.5); color: #fca5a5; }
 
@@ -183,17 +187,7 @@ textarea:focus { outline: none; }
 @keyframes bounce { 0%, 80%, 100% { transform: scale(0); } 40% { transform: scale(1); } }
 @keyframes slideIn { from { opacity: 0; transform: translateY(10px); } to { opacity: 1; transform: translateY(0); } }
 
-/* Mobile */
-@media (max-width: 600px) {
-    .search-wrapper { width: 140px; }
-    .message { max-width: 100%; }
-}
-/* --- 7. COPY BUTTON STYLES --- */
-.message.ai .content {
-    position: relative; /* Needed for absolute positioning of copy button */
-    padding-right: 40px; /* Make space so text doesn't hit the button */
-}
-
+/* --- 7. COPY BUTTON --- */
 .copy-btn {
     position: absolute;
     top: 8px;
@@ -216,12 +210,13 @@ textarea:focus { outline: none; }
     color: white;
 }
 
-.copy-btn i {
-    font-size: 0.85rem;
+.copy-btn.copied {
+    background: #10b981; 
+    color: white;
 }
 
-/* Success animation state */
-.copy-btn.copied {
-    background: #10b981; /* Green */
-    color: white;
+/* Mobile */
+@media (max-width: 600px) {
+    .search-wrapper { width: 140px; }
+    .message { max-width: 100%; }
 }
