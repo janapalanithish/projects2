@@ -19,10 +19,9 @@ const userInput = document.getElementById('user-input');
 const sendBtn = document.getElementById('send-btn');
 const searchBar = document.getElementById('search-bar');
 
-// --- INITIALIZATION ---
 window.addEventListener('DOMContentLoaded', () => {
-    // Optional: Add a welcome message every time the page refreshes
-    addMessageToState('ai', "Nexus AI Online. Session initialized. How can I assist you today?");
+    // Updated Welcome Message to clarify purpose
+    addMessageToState('ai', "Nexus AI Online. System initialized.\n\n⚠️ **Mode: Prompt Engineering**\nI am a specialized agent designed solely for **generating and refining prompts**. Please describe the task or role you need a prompt for.");
 
     // Check limit immediately on load
     checkRateLimit();
