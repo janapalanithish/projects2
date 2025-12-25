@@ -129,38 +129,31 @@ function addMessageToState(role, text) {
     renderMessages(); 
 }
 
-function renderMessages(searchQuery = '') {
-    chatContainer.innerHTML = ''; 
+// --- COPY FUNCTIONALITY ---
 
-    const filteredHistory = chatHistory.filter(msg => 
-        msg.text.toLowerCase().includes(searchQuery.toLowerCase())
-    );
+function copyToClipboard(msgId) {
+    // Find the message object in history
+    const msg = chatHistory.find(m => m.id === msgId);
+    if (!msg) return;
 
-    if (filteredHistory.length === 0 && chatHistory.length > 0) {
-        chatContainer.innerHTML = `<div style="text-align:center; color:var(--text-muted); margin-top:20px;">No messages found matching "${searchQuery}"</div>`;
-        return;
-    }
-
-    filteredHistory.forEach(msg => {
-        const messageDiv = document.createElement('div');
-        messageDiv.className = `message ${msg.role}`;
-
-        let icon = msg.role === 'user' ? '<i class="fa-solid fa-user"></i>' : '<i class="fa-solid fa-bolt"></i>';
-        if (msg.role === 'error') icon = '<i class="fa-solid fa-circle-exclamation"></i>';
-
-        let formattedText = parseMarkdown(msg.text);
-
-        if (searchQuery) {
-            const regex = new RegExp(`(${searchQuery})`, 'gi');
-            formattedText = formattedText.replace(regex, '<span class="highlight">$1</span>');
+    // Use the modern Clipboard API
+    navigator.clipboard.writeText(msg.text).then(() => {
+        // Find the button to change its icon briefly
+        // Note: Since we re-render often, we look up by the onclick attribute or class context
+        // But a simpler DOM lookup is safer here:
+        const btn = document.querySelector(`button[onclick="copyToClipboard(${msgId})"]`);
+        if (btn) {
+            const originalIcon = btn.innerHTML;
+            btn.innerHTML = '<i class="fa-solid fa-check"></i>'; // Change to checkmark
+            btn.classList.add('copied');
+            
+            setTimeout(() => {
+                btn.innerHTML = '<i class="fa-regular fa-copy"></i>'; // Revert
+                btn.classList.remove('copied');
+            }, 2000);
         }
-
-        messageDiv.innerHTML = `
-            <div class="avatar ${msg.role}">${icon}</div>
-            <div class="content">${formattedText}</div>
-        `;
-
-        chatContainer.appendChild(messageDiv);
+    }).catch(err => {
+        console.error('Failed to copy: ', err);
     });
 }
 

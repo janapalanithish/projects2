@@ -188,3 +188,40 @@ textarea:focus { outline: none; }
     .search-wrapper { width: 140px; }
     .message { max-width: 100%; }
 }
+/* --- 7. COPY BUTTON STYLES --- */
+.message.ai .content {
+    position: relative; /* Needed for absolute positioning of copy button */
+    padding-right: 40px; /* Make space so text doesn't hit the button */
+}
+
+.copy-btn {
+    position: absolute;
+    top: 8px;
+    right: 8px;
+    background: rgba(255, 255, 255, 0.1);
+    border: none;
+    border-radius: 6px;
+    width: 28px;
+    height: 28px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    cursor: pointer;
+    color: var(--text-muted);
+    transition: all 0.2s;
+}
+
+.copy-btn:hover {
+    background: rgba(255, 255, 255, 0.2);
+    color: white;
+}
+
+.copy-btn i {
+    font-size: 0.85rem;
+}
+
+/* Success animation state */
+.copy-btn.copied {
+    background: #10b981; /* Green */
+    color: white;
+}
