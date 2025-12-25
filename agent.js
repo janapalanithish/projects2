@@ -1,17 +1,14 @@
 /**
  * CONFIGURATION
  */
-
 const CONFIG = {
-    // Your actual n8n production webhook URL
-    API_URL: "https://nithish1233.app.n8n.cloud/webhook/ai-agent",
-    // Public Client Key Placeholder
+    // FINAL PRODUCTION URL
+    API_URL: "https://nithish-nexus-ai.app.n8n.cloud/webhook/nexus-ai",
+    // Public Client Key Placeholder (No longer sent in headers)
     CLIENT_KEY: "public-client-key-placeholder" 
 };
 
 // STATE MANAGEMENT
-// CHANGED: We now initialize with an empty array every time the page refreshes.
-// No more loading from localStorage.
 let chatHistory = []; 
 
 // DOM ELEMENTS
@@ -57,8 +54,7 @@ async function handleSend() {
         const response = await fetch(CONFIG.API_URL, {
             method: 'POST',
             headers: {
-                'Content-Type': 'application/json',
-                'x-api-key': CONFIG.CLIENT_KEY
+                'Content-Type': 'application/json'
             },
             body: JSON.stringify({ message: text })
         });
@@ -93,8 +89,6 @@ function addMessageToState(role, text) {
         timestamp: new Date().toISOString()
     };
     chatHistory.push(msg);
-    // CHANGED: Removed saveHistory() call. 
-    // We don't want to save to localStorage anymore.
     renderMessages(); 
 }
 
@@ -170,8 +164,6 @@ function removeLoadingIndicator() {
 function scrollToBottom() {
     chatContainer.scrollTop = chatContainer.scrollHeight;
 }
-
-// CHANGED: Removed the saveHistory() function entirely since we don't need it.
 
 // --- EVENT LISTENERS ---
 

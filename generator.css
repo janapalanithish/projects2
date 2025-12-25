@@ -176,7 +176,7 @@ body[data-page="studio"] {
     font-weight: bold;
 }
 
-/* Copy Button - Fixed Right Align */
+/* Copy Button */
 .copy-btn {
     margin-left: auto; 
     background-color: #334155; 
@@ -245,7 +245,6 @@ pre {
 
 /* 7. NEXUS ADVISOR WIDGET */
 .advisor-widget {
-    margin-top: auto; 
     background: linear-gradient(145deg, #1e293b, #0f172a);
     border: 1px solid #334155;
     border-radius: 12px;
@@ -318,6 +317,27 @@ pre {
 .alternatives li::before {
     content: "•";
     color: #6366f1; 
+}
+
+/* --- NEW: JSON EXPLAINER SPECIFIC --- */
+.json-widget {
+    border-color: rgba(251, 191, 36, 0.3);
+    background: linear-gradient(145deg, #2a220b, #0f172a); /* Slight gold tint */
+}
+
+.json-list {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+}
+
+.json-list li {
+    color: #e2e8f0;
+    font-size: 0.8rem;
+    margin-bottom: 0.4rem;
+    display: flex;
+    align-items: center;
+    gap: 8px;
 }
 
 @keyframes fadeIn {

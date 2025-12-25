@@ -156,9 +156,12 @@ function loadTask(taskKey) {
         consoleBox.innerHTML = '<span class="comment">// Ready... Output will appear here as JSON Object.</span>';
     }
     
-    // Hide Advisor until generated
+    // Hide Advisors until generated
     const advisor = document.getElementById('advisor-widget');
+    const jsonExplainer = document.getElementById('json-explainer');
+    
     if(advisor) advisor.style.display = 'none';
+    if(jsonExplainer) jsonExplainer.style.display = 'none';
 }
 
 // 4. Generate Logic (JSON + Advisor Trigger)
@@ -232,6 +235,12 @@ function generatePrompt() {
 
     renderJSON(finalOutput);
     updateAdvisor(currentTask);
+    
+    // Reveal JSON Explainer
+    const jsonExplainer = document.getElementById('json-explainer');
+    if(jsonExplainer) {
+        jsonExplainer.style.display = "block";
+    }
 }
 
 // 5. Update Advisor Widget

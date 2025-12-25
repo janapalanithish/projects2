@@ -49,7 +49,28 @@
                 </button>
             </div>
 
-            <div class="advisor-widget" id="advisor-widget" style="display: none;">
+            <div class="advisor-widget json-widget" id="json-explainer" style="display: none; margin-top: auto;">
+                <div class="advisor-header" style="color: #fbbf24;">
+                    <i class="fa-brands fa-js"></i> Format Explainer
+                </div>
+                <div class="advisor-content">
+                    <div class="primary-model">
+                        <span class="badge" style="background: rgba(251, 191, 36, 0.2); color: #fbbf24;">Output Format</span>
+                        <h4 style="color: #fff;">JSON</h4>
+                        <p style="color: #94a3b8; font-size: 0.8rem;">JavaScript Object Notation</p>
+                    </div>
+                    <div class="alternatives">
+                        <small style="color: #fbbf24; margin-bottom: 5px;">Why we use it:</small>
+                        <ul class="json-list">
+                            <li><i class="fa-solid fa-check" style="color: #fbbf24; font-size: 0.7rem;"></i> Universal AI Compatibility</li>
+                            <li><i class="fa-solid fa-check" style="color: #fbbf24; font-size: 0.7rem;"></i> Lightweight & Structured</li>
+                            <li><i class="fa-solid fa-check" style="color: #fbbf24; font-size: 0.7rem;"></i> Easy to Parse</li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+
+            <div class="advisor-widget" id="advisor-widget" style="display: none; margin-top: 1rem;">
                 <div class="advisor-header">
                     <i class="fa-solid fa-robot"></i> Nexus Advisor
                 </div>
@@ -61,12 +82,13 @@
                     </div>
                     <div class="alternatives">
                         <small>Alternatives:</small>
-                        <ul id="rec-alts">
-                            </ul>
+                        <ul id="rec-alts"></ul>
                     </div>
                 </div>
             </div>
-            </aside>
+
+        </aside>
+
         <main class="studio-workspace">
             
             <div class="workspace-header">
@@ -74,8 +96,7 @@
                 <p id="task-desc">Create ultra-realistic 4K visuals with engineered lighting and composition rules.</p>
             </div>
 
-            <div class="form-container" id="dynamic-form">
-                </div>
+            <div class="form-container" id="dynamic-form"></div>
 
             <div class="action-area">
                 <button class="generate-btn" onclick="generatePrompt()">
