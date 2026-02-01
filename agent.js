@@ -1,6 +1,6 @@
 const CONFIG = {
     // UPDATED: Your Production URL
-    API_URL: "https://varshanharsha.app.n8n.cloud/webhook/nexus-ai", 
+    API_URL: "https://varshanharsha.app.n8n.cloud/webhook-test/nexus-ai", 
     CLIENT_KEY: "public-client-key-placeholder", 
     DAILY_LIMIT: 999999 // Effectively infinite
 };
