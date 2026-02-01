@@ -1,6 +1,7 @@
 const CONFIG = {
-    API_URL: "https://varshanharsha.app.n8n.cloud/webhook-test/nexus-ai", // <-- UPDATED webhook URL
-    CLIENT_KEY: "public-client-key-placeholder", // keep as-is
+    // UPDATED: Connected to your Live Production Workflow
+    API_URL: "https://varshanharsha.app.n8n.cloud/webhook/nexus-ai", 
+    CLIENT_KEY: "public-client-key-placeholder", 
     DAILY_LIMIT: 10
 };
 
@@ -53,6 +54,7 @@ async function handleSend() {
         if (!response.ok) throw new Error(`Server Error: ${response.status}`);
 
         const data = await response.json();
+        // Fallback checks for different JSON response structures (output, text, message)
         const aiText = data.output || data.text || data.message || JSON.stringify(data);
 
         removeLoadingIndicator();
@@ -69,7 +71,7 @@ async function handleSend() {
     }
 }
 
-// ---------------- Helper Functions (unchanged) ---------------- //
+// ---------------- Helper Functions ---------------- //
 
 function checkRateLimit() {
     const today = new Date().toDateString(); 
