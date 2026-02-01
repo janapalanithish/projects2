@@ -1,9 +1,8 @@
 const CONFIG = {
-    // Production URL
+    // UPDATED: Your Production URL
     API_URL: "https://varshanharsha.app.n8n.cloud/webhook/nexus-ai", 
     CLIENT_KEY: "public-client-key-placeholder", 
-    // UPDATED: Limit set to effectively infinity so you are never blocked
-    DAILY_LIMIT: 999999 
+    DAILY_LIMIT: 999999 // Effectively infinite
 };
 
 let chatHistory = []; 
@@ -14,12 +13,14 @@ const sendBtn = document.getElementById('send-btn');
 const searchBar = document.getElementById('search-bar');
 
 window.addEventListener('DOMContentLoaded', () => {
+    // Initial Greeting
     addMessageToState('ai', "Nexus AI Online. System initialized.\n\n⚠️ **Mode: Prompt Engineering**\nI am a specialized agent designed solely for **generating and refining prompts**. Please describe the task or role you need a prompt for.");
 
     checkRateLimit();
     renderMessages(); 
     scrollToBottom();
 
+    // Auto-resize input box
     userInput.addEventListener('input', function() {
         this.style.height = 'auto';
         this.style.height = (this.scrollHeight) + 'px';
@@ -28,7 +29,6 @@ window.addEventListener('DOMContentLoaded', () => {
 });
 
 async function handleSend() {
-    // This check will now practically always pass
     if (!checkRateLimit()) {
         addMessageToState('error', `Daily Limit Reached. You have used ${CONFIG.DAILY_LIMIT}/${CONFIG.DAILY_LIMIT} prompts today.`);
         return; 
@@ -37,6 +37,7 @@ async function handleSend() {
     const text = userInput.value.trim();
     if (!text) return;
 
+    // 1. Add User Message to Chat
     addMessageToState('user', text);
     userInput.value = '';
     userInput.style.height = '56px'; 
@@ -47,25 +48,24 @@ async function handleSend() {
     scrollToBottom();
 
     try {
+        // 2. Send Data to n8n
         const response = await fetch(CONFIG.API_URL, {
             method: 'POST',
             headers: { 'Content-Type': 'application/json' },
-            body: JSON.stringify({ message: text })
+            body: JSON.stringify({ message: text }) 
         });
 
         if (!response.ok) throw new Error(`Server Error: ${response.status}`);
 
         const data = await response.json();
 
-        // --- JSON PARSING FIX ---
-        // 1. Try to get the text from common fields
+        // 3. Smart Output Handling (Fixes JSON showing in chat)
         let aiText = data.output || data.text || data.message || data;
-
-        // 2. If aiText is still an object (e.g. {output: "Hello"}), extract the string inside
+        
+        // If the response is still an object (e.g. { "output": "Answer" }), extract just the answer
         if (typeof aiText === 'object') {
             aiText = aiText.output || aiText.text || JSON.stringify(aiText);
         }
-        // --- END FIX ---
 
         removeLoadingIndicator();
         addMessageToState('ai', aiText);
@@ -94,9 +94,7 @@ function checkRateLimit() {
         localStorage.setItem('nexus_count', '0');
         return true; 
     }
-
-    if (count >= CONFIG.DAILY_LIMIT) return false;
-    return true; 
+    return count < CONFIG.DAILY_LIMIT;
 }
 
 function incrementUsage() {
@@ -137,11 +135,13 @@ function renderMessages(searchQuery = '') {
 
         let formattedText = parseMarkdown(msg.text);
 
+        // Highlight search terms
         if (searchQuery) {
             const regex = new RegExp(`(${searchQuery})`, 'gi');
             formattedText = formattedText.replace(regex, '<span class="highlight">$1</span>');
         }
 
+        // Copy button for AI messages
         let copyButtonHtml = '';
         if (msg.role === 'ai') {
             copyButtonHtml = `
@@ -165,10 +165,15 @@ function renderMessages(searchQuery = '') {
 
 function parseMarkdown(text) {
     if (!text) return "";
+    // Basic safety encoding
     let safeText = text.replace(/&/g, "&amp;").replace(/</g, "&lt;").replace(/>/g, "&gt;");
-    safeText = safeText.replace(/```([\s\S]*?)```/g, '<pre><code>$1</code></pre>');
-    safeText = safeText.replace(/\*\*(.*?)\*\*/g, '<strong>$1</strong>');
-    safeText = safeText.replace(/\n/g, '<br>');
+    
+    // Markdown formatting
+    safeText = safeText.replace(/```([\s\S]*?)```/g, '<pre><code>$1</code></pre>'); // Code blocks
+    safeText = safeText.replace(/`([^`]+)`/g, '<code>$1</code>'); // Inline code
+    safeText = safeText.replace(/\*\*(.*?)\*\*/g, '<strong>$1</strong>'); // Bold
+    safeText = safeText.replace(/\n/g, '<br>'); // Newlines
+    
     return safeText;
 }
 
@@ -217,6 +222,7 @@ function scrollToBottom() {
     chatContainer.scrollTop = chatContainer.scrollHeight;
 }
 
+// Event Listeners
 userInput.addEventListener('keydown', (e) => {
     if (e.key === 'Enter' && !e.shiftKey) {
         e.preventDefault();
