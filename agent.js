@@ -1,8 +1,9 @@
 const CONFIG = {
-    // UPDATED: Connected to your Live Production Workflow
+    // Production URL
     API_URL: "https://varshanharsha.app.n8n.cloud/webhook/nexus-ai", 
     CLIENT_KEY: "public-client-key-placeholder", 
-    DAILY_LIMIT: 10
+    // UPDATED: Limit set to effectively infinity so you are never blocked
+    DAILY_LIMIT: 999999 
 };
 
 let chatHistory = []; 
@@ -27,8 +28,9 @@ window.addEventListener('DOMContentLoaded', () => {
 });
 
 async function handleSend() {
+    // This check will now practically always pass
     if (!checkRateLimit()) {
-        addMessageToState('error', `Daily Limit Reached. You have used ${CONFIG.DAILY_LIMIT}/${CONFIG.DAILY_LIMIT} prompts today. Please come back tomorrow!`);
+        addMessageToState('error', `Daily Limit Reached. You have used ${CONFIG.DAILY_LIMIT}/${CONFIG.DAILY_LIMIT} prompts today.`);
         return; 
     }
 
@@ -55,7 +57,7 @@ async function handleSend() {
 
         const data = await response.json();
 
-        // --- FIX START: Robust JSON Parsing ---
+        // --- JSON PARSING FIX ---
         // 1. Try to get the text from common fields
         let aiText = data.output || data.text || data.message || data;
 
@@ -63,7 +65,7 @@ async function handleSend() {
         if (typeof aiText === 'object') {
             aiText = aiText.output || aiText.text || JSON.stringify(aiText);
         }
-        // --- FIX END ---
+        // --- END FIX ---
 
         removeLoadingIndicator();
         addMessageToState('ai', aiText);
@@ -162,7 +164,7 @@ function renderMessages(searchQuery = '') {
 }
 
 function parseMarkdown(text) {
-    if (!text) return ""; // Safety check for empty text
+    if (!text) return "";
     let safeText = text.replace(/&/g, "&amp;").replace(/</g, "&lt;").replace(/>/g, "&gt;");
     safeText = safeText.replace(/```([\s\S]*?)```/g, '<pre><code>$1</code></pre>');
     safeText = safeText.replace(/\*\*(.*?)\*\*/g, '<strong>$1</strong>');
