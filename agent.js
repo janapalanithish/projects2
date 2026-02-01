@@ -1,5 +1,5 @@
 const CONFIG = {
-    API_URL: "https://varshanharsha.app.n8n.cloud/webhook/nexus-ai", // <-- UPDATED webhook URL
+    API_URL: "https://varshanharsha.app.n8n.cloud/webhook-test/nexus-ai", // <-- UPDATED webhook URL
     CLIENT_KEY: "public-client-key-placeholder", // keep as-is
     DAILY_LIMIT: 10
 };
