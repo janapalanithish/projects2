@@ -1,6 +1,4 @@
-/* --- NEXUS STUDIO LOGIC --- */
 
-// 1. Advisor Data (Recommendations)
 const advisorLogic = {
     image: {
         primary: { name: "Midjourney v6", reason: "Best for cinematic, artistic, and texture-heavy visuals." },
@@ -36,7 +34,7 @@ const advisorLogic = {
     }
 };
 
-// 2. Task Configurations
+
 const taskModules = {
     image: {
         title: "Image Generation Architect",
@@ -105,31 +103,28 @@ const taskModules = {
 
 let currentTask = 'image';
 
-// 3. Load Task Interface
 function loadTask(taskKey) {
     currentTask = taskKey;
     
-    // Update Sidebar Active State
     if (event && event.currentTarget) {
         document.querySelectorAll('.task-btn').forEach(btn => btn.classList.remove('active'));
         event.currentTarget.classList.add('active');
     }
 
-    // Get Data
+  
     const data = taskModules[taskKey];
     
-    // Update Header
+    
     const titleEl = document.getElementById('task-title');
     const descEl = document.getElementById('task-desc');
     if(titleEl) titleEl.innerText = data.title;
     if(descEl) descEl.innerText = data.desc;
 
-    // Build Form
+
     const formContainer = document.getElementById('dynamic-form');
     if (formContainer) {
         formContainer.innerHTML = ''; 
 
-        // Create Inputs
         data.fields.forEach(field => {
             let fieldHTML = `<div class="form-group"><label class="form-label">${field.label}</label>`;
             
@@ -150,13 +145,13 @@ function loadTask(taskKey) {
         });
     }
 
-    // Reset Console
+    
     const consoleBox = document.getElementById('output-console');
     if (consoleBox) {
         consoleBox.innerHTML = '<span class="comment">// Ready... Output will appear here as JSON Object.</span>';
     }
     
-    // Hide Advisors until generated
+    
     const advisor = document.getElementById('advisor-widget');
     const jsonExplainer = document.getElementById('json-explainer');
     
@@ -164,12 +159,12 @@ function loadTask(taskKey) {
     if(jsonExplainer) jsonExplainer.style.display = 'none';
 }
 
-// 4. Generate Logic (JSON + Advisor Trigger)
+
 function generatePrompt() {
     const taskData = taskModules[currentTask];
     let userInputs = {};
 
-    // Collect User Inputs
+    
     taskData.fields.forEach(field => {
         const element = document.getElementById(field.id);
         if (element) {
@@ -177,7 +172,7 @@ function generatePrompt() {
         }
     });
 
-    // --- PROMPT CONSTRUCTION (JSON OBJECT) ---
+    
     let finalOutput = {};
 
     if (currentTask === 'image') {
@@ -236,30 +231,29 @@ function generatePrompt() {
     renderJSON(finalOutput);
     updateAdvisor(currentTask);
     
-    // Reveal JSON Explainer
+    
     const jsonExplainer = document.getElementById('json-explainer');
     if(jsonExplainer) {
         jsonExplainer.style.display = "block";
     }
 }
 
-// 5. Update Advisor Widget
+
 function updateAdvisor(taskKey) {
     const widget = document.getElementById('advisor-widget');
     const data = advisorLogic[taskKey];
     
     if (!data) return;
 
-    // Show widget with animation
+    
     widget.style.display = "block";
 
-    // Update Primary
     document.getElementById('rec-model-name').innerText = data.primary.name;
     document.getElementById('rec-model-reason').innerText = data.primary.reason;
 
-    // Update Alternatives
+    
     const altList = document.getElementById('rec-alts');
-    altList.innerHTML = ""; // Clear previous
+    altList.innerHTML = ""; 
     
     data.alts.forEach(alt => {
         const li = document.createElement('li');
@@ -268,7 +262,7 @@ function updateAdvisor(taskKey) {
     });
 }
 
-// 6. JSON Renderer (Pretty Print)
+
 function renderJSON(jsonObj) {
     const consoleBox = document.getElementById('output-console');
     if (consoleBox) {
@@ -283,7 +277,7 @@ function renderJSON(jsonObj) {
     }
 }
 
-// 7. Copy to Clipboard
+
 function copyToClipboard() {
     const text = document.getElementById('output-console').innerText;
     navigator.clipboard.writeText(text).then(() => {
@@ -294,7 +288,7 @@ function copyToClipboard() {
     });
 }
 
-// Initial Load
+
 document.addEventListener('DOMContentLoaded', () => {
     const firstBtn = document.querySelector('.task-btn');
     if(firstBtn) firstBtn.classList.add('active');

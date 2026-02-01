@@ -84,11 +84,10 @@
 
     <script>
         function selectSector(sector) {
-            // 1. Save the user's choice to the browser's memory
+            
             localStorage.setItem('nexus_selected_sector', sector);
             
-            // 2. Redirect to the Chat Agent Page
-            // (Previously this was pointing to index.html, which was causing the loop)
+           
             window.location.href = 'agent.html'; 
         }
     </script>

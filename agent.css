@@ -1,12 +1,14 @@
-/* --- 1. CORE VARIABLES & RESET --- */
+
 :root {
-    --bg-body: #0f172a;       /* Deep slate/navy */
-    --bg-panel: #1e293b;      /* Lighter slate for input/header */
-    --bg-user: #3b82f6;       /* Blue for user */
-    --bg-ai: #334155;         /* Grey for AI */
+    --bg-body: #0f172a;       
+    --bg-panel: #1e293b;      
+    --bg-user: #3b82f6;       
+    --bg-ai: #334155;         
     --text-main: #f1f5f9;
+
+
     --text-muted: #94a3b8;
-    --highlight: #facc15;     /* Yellow for search matches */
+    --highlight: #facc15;     
     --radius: 12px;
 }
 
@@ -22,7 +24,7 @@ body {
     overflow: hidden;
 }
 
-/* --- 2. HEADER & SEARCH --- */
+
 header {
     background: var(--bg-panel);
     padding: 15px 25px;
@@ -53,7 +55,6 @@ header {
 .search-wrapper input:focus { outline: none; border-color: #818cf8; background: rgba(0,0,0,0.4); }
 .search-icon { position: absolute; left: 12px; top: 50%; transform: translateY(-50%); color: var(--text-muted); font-size: 0.8rem; }
 
-/* --- 3. CHAT CONTAINER --- */
 #chat-container {
     flex: 1;
     overflow-y: auto;
@@ -64,7 +65,7 @@ header {
     scroll-behavior: smooth;
 }
 
-/* Message Bubbles */
+
 .message {
     display: flex;
     gap: 15px;
@@ -100,12 +101,11 @@ header {
 .message.ai .content { 
     background: var(--bg-ai); 
     border-top-left-radius: 2px;
-    padding-right: 40px; /* Space for Copy Button */
+    padding-right: 40px;
 }
 .message.user .content { background: var(--bg-user); border-top-right-radius: 2px; }
 .message.error .content { background: rgba(239, 68, 68, 0.2); border: 1px solid rgba(239, 68, 68, 0.5); color: #fca5a5; }
 
-/* --- 4. MARKDOWN STYLES --- */
 pre {
     background: #0f172a;
     padding: 12px;
@@ -118,7 +118,6 @@ code { font-family: 'JetBrains Mono', monospace; font-size: 0.85rem; color: #a5b
 strong { color: #fff; font-weight: 600; }
 .highlight { background-color: var(--highlight); color: #000; padding: 2px 4px; border-radius: 4px; font-weight: 600; }
 
-/* --- 5. INPUT AREA --- */
 .input-area {
     background: var(--bg-panel);
     padding: 20px;
@@ -175,7 +174,6 @@ textarea:focus { outline: none; }
     margin-top: 8px;
 }
 
-/* --- 6. ANIMATIONS --- */
 .typing-indicator { display: flex; gap: 4px; padding: 10px 0; }
 .typing-indicator span {
     width: 6px; height: 6px; background: #94a3b8; border-radius: 50%;
@@ -187,7 +185,7 @@ textarea:focus { outline: none; }
 @keyframes bounce { 0%, 80%, 100% { transform: scale(0); } 40% { transform: scale(1); } }
 @keyframes slideIn { from { opacity: 0; transform: translateY(10px); } to { opacity: 1; transform: translateY(0); } }
 
-/* --- 7. COPY BUTTON --- */
+
 .copy-btn {
     position: absolute;
     top: 8px;
@@ -215,7 +213,7 @@ textarea:focus { outline: none; }
     color: white;
 }
 
-/* Mobile */
+
 @media (max-width: 600px) {
     .search-wrapper { width: 140px; }
     .message { max-width: 100%; }

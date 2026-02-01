@@ -1,6 +1,6 @@
-/* --- MODEL DATA REPOSITORY --- */
+
 const modelsData = [
-    // 1. THE GIANTS (Existing)
+    
     {
         id: "gpt4o",
         name: "GPT-4o",
@@ -68,7 +68,7 @@ const modelsData = [
         icon: "fa-brands fa-meta"
     },
 
-    // 2. NEW: AI DEV AGENTS & FRAMEWORKS (Requested Addition)
+
     {
         id: "bolt",
         name: "Bolt.new",
@@ -137,24 +137,22 @@ const modelsData = [
     },
 ];
 
-/* --- RENDER LOGIC (FIXED TO PRESERVE STYLING) --- */
+
 
 function renderComparison(filter = 'all') {
     const grid = document.getElementById('comparison-grid');
     if (!grid) return;
 
-    // Clear existing
+
     grid.innerHTML = '';
 
-    // Filter Data
+    
     const filteredData = modelsData.filter(model => {
         if (filter === 'all') return true;
-        // Map 'agent' types to 'code' filter if necessary, or keep as is.
-        // For now, displaying everything under 'all' or their specific types.
         return model.type === filter;
     });
 
-    // Update Buttons State
+
     document.querySelectorAll('.filter-btn').forEach(btn => {
         btn.classList.remove('active');
         if (btn.textContent.toLowerCase().includes(filter) || 
@@ -163,13 +161,11 @@ function renderComparison(filter = 'all') {
         }
     });
 
-    // Generate HTML Cards (Using exact original structure)
     filteredData.forEach(model => {
         const card = document.createElement('div');
-        // This class 'model-card' is what your CSS targets for the dark style
+        
         card.className = 'model-card'; 
         
-        // This HTML structure exactly matches the structure that provides the correct styling
         card.innerHTML = `
             ${model.badge ? `<span class="badge">${model.badge}</span>` : ''}
             <div class="model-header">
@@ -193,7 +189,7 @@ function renderComparison(filter = 'all') {
     });
 }
 
-// Initial Load
+
 document.addEventListener('DOMContentLoaded', () => {
     renderComparison('all');
 });
