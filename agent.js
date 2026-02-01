@@ -54,8 +54,16 @@ async function handleSend() {
         if (!response.ok) throw new Error(`Server Error: ${response.status}`);
 
         const data = await response.json();
-        // Fallback checks for different JSON response structures (output, text, message)
-        const aiText = data.output || data.text || data.message || JSON.stringify(data);
+
+        // --- FIX START: Robust JSON Parsing ---
+        // 1. Try to get the text from common fields
+        let aiText = data.output || data.text || data.message || data;
+
+        // 2. If aiText is still an object (e.g. {output: "Hello"}), extract the string inside
+        if (typeof aiText === 'object') {
+            aiText = aiText.output || aiText.text || JSON.stringify(aiText);
+        }
+        // --- FIX END ---
 
         removeLoadingIndicator();
         addMessageToState('ai', aiText);
@@ -154,6 +162,7 @@ function renderMessages(searchQuery = '') {
 }
 
 function parseMarkdown(text) {
+    if (!text) return ""; // Safety check for empty text
     let safeText = text.replace(/&/g, "&amp;").replace(/</g, "&lt;").replace(/>/g, "&gt;");
     safeText = safeText.replace(/```([\s\S]*?)```/g, '<pre><code>$1</code></pre>');
     safeText = safeText.replace(/\*\*(.*?)\*\*/g, '<strong>$1</strong>');
