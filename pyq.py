@@ -44,4 +44,13 @@ import sys
 x = int(input("Enter the number:"))
 print(sys.getsizeof(x))
 print(datetime.date((now:=datetime.datetime.now()).year, now.month, now.day).toordinal())
+divi = input("Enter the dividend")
+divs = input("Enter the divisor")
+que = int(divi) // int(divs)
+rem = int(divi) % int(divs)
+print(que)
+print(rem)
 
+g = int(input("Enter the number:"))
+for i in range(1, 11):
+    print(g*i)
