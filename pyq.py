@@ -35,4 +35,6 @@ for i in range(5,7):
     for j in range(5,7):
         print('*'*numbers2)
     print('*'*numbers2)
-# square stars printing with removing of in between starts
+#inverted rectangle
+for i in range(7,0,-1):
+    print(i*'*')
