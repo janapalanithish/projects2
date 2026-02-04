@@ -1,56 +1,38 @@
-#import sys
-
-#y = input("Enter a value: ")
-
-# try converting to int
-#try:
-  #  val = int(y)
-#except ValueError:
- #   try:
-   #     val = float(y)
-    #except ValueError:
-     #   val = y   # keep it as string
-
-#print("Data type:", type(val))
-#print("Number of bytes:", sys.getsizeof(val))
-
-a = int(input("Enter the number"))
-b = int(input("Enter the number"))
-if a > b:
-    print("a is grater than b")
-elif a < b:
-    print("b is grater than a")
-else:
-    print("They are equal")
-    import sys
-
-print(sys.getsizeof(10))        
-print(sys.getsizeof(10.5))      
-print(sys.getsizeof("hello"))   
-print(sys.getsizeof('a'))       
-import datetime
-print(datetime.datetime.now())
-print(datetime.datetime.now().year)
-print(datetime.datetime.now().toordinal)
-
+#adding all the digits in the number 1234
+sum_digit = 0
 import math
-print(math.pi)
-print(math.log10(100))
-print(math.sqrt(16))
+number = 1234
+for i in range(4):
+    digit = number % 10
+    sum_digit = digit + sum_digit
+    number = number // 10
+    print(sum_digit)
+#write a program to check wheater the given charecter is vowel or not
+check = str(input("Enter the char"))
+if (check == 'a'):
+    print("This an vovel")
+elif (check == 'o'):
+    print("This is an vowel")
+elif (check == 'i'):
+    print("This is an vowel")
+elif(check == 'e'):
+    print("This is an vowel")
+elif(check == 'u'):
+    print("This is an vowel")
+else:
+    print("this is not a vowel")
+#finding the ASCII value of the character
 
-x = input("Enter the number")
-print(math.sqrt(int(x)))
-import sys 
-x = int(input("Enter the number:"))
-print(sys.getsizeof(x))
-print(datetime.date((now:=datetime.datetime.now()).year, now.month, now.day).toordinal())
-divi = input("Enter the dividend")
-divs = input("Enter the divisor")
-que = int(divi) // int(divs)
-rem = int(divi) % int(divs)
-print(que)
-print(rem)
 
-g = int(input("Enter the number:"))
-for i in range(1, 11):
-    print(g*i)
+input1 = str(input("Enter the char"))
+print("The ascii value is" , ord(input1))
+#to print the triangle stars
+for i in range(6):
+    print(i*'*')
+#to print the square of the stars
+numbers2 = 5
+for i in range(5,7):
+    for j in range(5,7):
+        print('*'*numbers2)
+    print('*'*numbers2)
+# square stars printing with removing of in between starts
