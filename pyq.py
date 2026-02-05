@@ -38,3 +38,5 @@ for i in range(5,7):
 #inverted rectangle
 for i in range(7,0,-1):
     print(i*'*')
+    # to print the sqaure start pattern removing the middle satrs
+

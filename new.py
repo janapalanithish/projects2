@@ -126,7 +126,7 @@ print(math.log10(100))
 print(math.sqrt(16))
 
 x = input("Enter the number")
-print(math.sqrt(int(x)))
+
 import sys 
 x = int(input("Enter the number:"))
 print(sys.getsizeof(x))
@@ -141,3 +141,5 @@ print(rem)
 g = int(input("Enter the number:"))
 for i in range(1, 11):
     print(g*i)
+    
+
