@@ -17,3 +17,18 @@ CREATE TABLE info1(
     UPDATE info1
     SET PLAN = 'premium' , rate_limits = 1000
     WHERE id = 1;
+    CREATE TABLE info3(
+    name INTEGER NOT NULL,
+    age INTEGER NOT NULL,
+    email UNIQUE NOT NULL,
+    id INTEGER AUTOINCREMENT PRIMARY KEY,
+    rate_limits INTEGER ,
+    PLAN TEXT NOT NULL
+    );
+    INSERT INTO info3(name , age , email , rate_limits , PLAN)
+    VALUES(?,?,?,?,?);
+    SELECT PLAN FROM info3;
+    UPDATE info3
+    SET rate_limits = 100
+    SET PLAN = 'premium'
+    WHERE id = 1;
