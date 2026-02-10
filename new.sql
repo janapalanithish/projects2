@@ -32,3 +32,65 @@ CREATE TABLE info1(
     SET rate_limits = 100
     SET PLAN = 'premium'
     WHERE id = 1;
+ -- learning constraint
+ CREATE DATABASE info;
+
+USE info;
+-- executing unique constarint 
+CREATE TABLE infoy(
+       phone_number INT UNIQUE
+       );
+INSERT INTO infoy(phone_number)
+VALUES 
+( 233 ),
+( 432 ),
+( 124 );
+-- executing not null constarint 
+CREATE TABLE inoyr(
+user_name TEXT NOT NULL
+);
+INSERT INTO inoyr(user_name)
+VALUES 
+("you"),
+("kumar"),
+("abhi");
+-- exectuting the check constarint 
+CREATE TABLE info12(
+age INT CHECK(age >=18)
+);
+INSERT INTO info12(age)
+VALUES 
+(19);
+-- exeuting default constaint 
+CREATE TABLE newstudents(
+gamer_name varchar(50) default 'TOMMAY123',
+age INT NOT NULL 
+);
+INSERT INTO newstudents(age)
+VALUES 
+(19)
+-- executing primary key 
+CREATE TABLE student1(
+age INT PRIMARY KEY ,
+user_name TEXT NOT NULL 
+);
+INSERT INTO student1(age , user_name)
+VALUES 
+(12 , "nithish"),
+(43 , "mohan"),
+( 23 , "rutwik");
+CREATE TABLE student2(
+subjects TEXT ,
+FOREIGN KEY (presnent_id) references student1(age)
+);
+INSERT INTO student2(subjects , presnent_id)
+VALUES ("maths" , 1),
+("science" , 2),
+("chem" , 3);
+
+
+
+
+
+
+
