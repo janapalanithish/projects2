@@ -3,23 +3,24 @@ CREATE DATABASE nexus;
 USE nexus;
 
 CREATE TABLE userinfo (
-       id INTEGER  ,
-       user_name TEXT not null ,
-       email TEXT not null,
-       password_hash TEXT 
+       id INTEGER PRIMARY KEY ,
+       user_name TEXT NOT NULL ,
+       email TEXT PRIMARY KEY,
+       password_hash TEXT NOT NULL 
        );
        INSERT INTO userinfo(id , user_name , email , password_hash )
        VALUES (1,"nithish","123@gmail.com" , "123344");
 CREATE TABLE plans(
 	   chat_id INTEGER ,
        model TEXT ,
-       no_searches INTEGER 
+       no_searches INTEGER ,
+       FOREIGN KEY (chat_id) REFERENCES userinfo(id)
        );
-       INSERT INTO model(chat_id , model , no_chats )
+       INSERT INTO plans(chat_id , model , no_searches )
        VALUES (1 , "free" , 10);
        
        UPDATE plans 
-       SET plan = "premium";
+       SET model = "premium";
        WHERE model = "free";
        SET no_searches = 100 ;
        WHERE model = "premium";
