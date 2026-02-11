@@ -45,3 +45,43 @@ for i in range(5):
     for j in range(5):
         print("#",end="")
     print()
+#write a program to find the largest number of the give numbers 
+x = int(input("ENTER THE NUMBER:"))
+y = int(input("ENTER THE NUMBER:"))
+z = int(input("ENTER THE NUMBER:"))
+
+if (x>z and x>y):
+    print("x is grater number than y and z ")
+elif(y>z and y>x):
+    print("y is grater than x and y")
+else:
+    print("Z is grater than x and y")
+
+
+x = int(input("ENTER THE NUMBER:"))
+y = int(input("ENTER THE NUMBER:"))
+z = int(input("ENTER THE NUMBER:"))
+
+if (x>z and x>y):
+    print("x is grater number than y and z ")
+elif(y>z and y>x):
+    print("y is grater than x and y")
+elif(z>x and z>y):
+    print("Z is grater than x and y")
+else:
+    print("all the values are equal")
+#check whether the given year is leap year or not
+year = int(input("ENTER THE YEAR:"))
+if (year%4 == 0 and year %400 == 0 and y%100 != 0):
+    print("this is a leap year")
+else:
+    print("this is not a leap year")
+
+#sum of n numbers
+def sumall(n):
+    sum = 0 
+    for i in range(n):
+        sum = sum + i
+    return sum
+n = int(input("ENTER THE NUMBER:"))
+print(sumall(n))
