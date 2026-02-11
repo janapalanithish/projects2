@@ -40,3 +40,8 @@ for i in range(7,0,-1):
     print(i*'*')
     # to print the sqaure start pattern removing the middle satrs
 
+# to print the total pattern 
+for i in range(5):
+    for j in range(5):
+        print("#",end="")
+    print()
