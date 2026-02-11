@@ -112,3 +112,11 @@ for i in range(1,6):
          print(f"{i} is the hcf of the n1 and n2")
     else:
         print(f"{i} is not the hcf of the n1 and n2")
+#fibonacchi using simple calc
+    a = 0
+    b = 1
+    for i in range(10):
+        c = a + b
+    a = b
+    b = c
+    print(c)
