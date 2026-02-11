@@ -85,3 +85,30 @@ def sumall(n):
     return sum
 n = int(input("ENTER THE NUMBER:"))
 print(sumall(n))
+
+#factorial using loops 
+n = int(input('enter the number: '))
+fact = 1
+for i in range(n):
+    fact = fact * (i+1)
+print(fact)
+
+
+#factorial using recursion
+def fact(n):
+    fact = 1
+    for i in range(n):
+        fact = fact * (i+1)
+    return fact
+n = int(input('enter the number:'))
+print(fact(5))
+
+
+#checking the factors of two numbers and finding the hcf of the two numbers
+n1 = int(input('enter the number1:'))
+n2 = int(input('enter the number2:'))
+for i in range(1,6):
+    if (n1%i == 0 and n2%i == 0):
+         print(f"{i} is the hcf of the n1 and n2")
+    else:
+        print(f"{i} is not the hcf of the n1 and n2")
