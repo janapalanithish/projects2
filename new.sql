@@ -87,6 +87,38 @@ INSERT INTO student2(subjects , presnent_id)
 VALUES ("maths" , 1),
 ("science" , 2),
 ("chem" , 3);
+CREATE DATABASE employees;
+
+USE employees;
+
+CREATE TABLE employee_info(
+id INT PRIMARY KEY,
+user_name TEXT NOT NULL ,
+department TEXT NOT NULL,
+salary INT
+);
+INSERT INTO employee_info(id , user_name , department , salary)
+VALUES
+(1 , 'raj' , 'HR' , 100000),
+(2 , 'raja' , 'manager' , 20000);
+UPDATE employee_info
+SET salary  = 50000
+WHERE department = 'HR';
+SET SQL_SAFE_UPDATES = 0;
+UPDATE employee_info
+SET user_name = 'raaj'
+WHERE user_name = 'raj';
+
+SELECT * FROM employee_info;
+
+
+
+
+
+
+
+
+
 
 
 
