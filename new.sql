@@ -134,6 +134,61 @@ WHERE user_name = 'raj';
 SELECT * FROM inf01;
 SELECT user_name , salary FROM inf01;
 
+CREATE DATABASE employeeinfo;
+
+USE employeeinfo;
+
+CREATE TABLE inf01(
+id INT PRIMARY KEY,
+user_name TEXT NOT NULL,
+department TEXT NOT NULL,
+salary INT
+);
+INSERT INTO inf01(id , user_name , department , salary)
+VALUES 
+(1 , 'nithish' , 'HR' , 10000),
+(2 , 'raj' , 'manager' , 12345),
+(3 , 'kiran' , 'employee' , 5432);
+SET SQL_SAFE_UPDATES = 0;
+DELETE FROM inf01
+WHERE department = 'HR';
+select * from inf01;
+DELETE FROM inf01
+WHERE user_name = 'raj';
+SELECT * FROM inf01;
+SELECT user_name , salary FROM inf01;
+ALTER TABLE inf01
+ADD info VARCHAR(50) DEFAULT 'VERY GOOD EMPLOYEE';
+SELECT * FROM inf01;
+DELETE FROM inf01
+WHERE age = NULL;
+SELECT * FROM inf01;
+ALTER TABLE inf01
+ADD child_dob INT DEFAULT 10;
+SELECT * FROM inf01;
+ALTER table inf01
+DROP COLUMN age;
+SELECT * FROM inf01;
+ALTER TABLE  inf01
+MODIFY child_dob TEXT;
+SELECT * FROM inf01;
+
+ALTER TABLE inf01
+CHANGE child_dob   date_of_joining INT;
+SELECT * FROM inf01;
+
+
+
+
+
+
+
+
+
+
+
+
+
 
 
 
