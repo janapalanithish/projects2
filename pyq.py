@@ -120,3 +120,28 @@ for i in range(1,6):
     a = b
     b = c
     print(c)
+#printing lcm of the number
+import math
+n1 = int(input("ENTER THE NUMBER:"))
+n2 = int(input("ENTER THE NUMBER:"))
+
+for i in range(n1 , n1*n2):
+    if (n1%i == 0 and n2%i == 0):
+        print("the lcm of numnber is " , max(n1,n2))
+else:
+         print("the lcm is " , math.lcm(n1,n2))
+
+# finding power of a number
+exp = int(input("ENTER THE EXPONENT:"))
+base = 2
+print("the power of the number is " , base**exp)
+# finding power of number by taking function
+def pow(base,power):
+      return base**power
+print(pow(2,3))
+# converting the number into the number digit 
+numinp = input("ENTER THE NUMBER:")
+my_dict = { '1': "one" , '2': "two" , '3': "three" , '4': "four" , '5': "five" , '6': "six" , '7': "seven" , '8': "eight" , '9': "nine" , '10':"ten"}
+
+for i in range(len(numinp)):
+    print(my_dict[numinp[i]])
