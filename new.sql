@@ -176,6 +176,37 @@ SELECT * FROM inf01;
 ALTER TABLE inf01
 CHANGE child_dob   date_of_joining INT;
 SELECT * FROM inf01;
+-- learning about the reanme command
+CREATE DATABASE nexusinfo;
+
+USE nexusinfo;
+
+CREATE TABLE nexusinfo1(
+id INT PRIMARY KEY ,
+user_name TEXT NOT NULL ,
+user_age INT ,
+user_profession TEXT NOT NULL 
+);
+INSERT INTO nexusinfo1(id , user_name , user_age , user_profession)
+VALUES 
+(1 , 'nithish' , 18 , 'student'),
+(2 , 'kumar' , 19 , 'teacher'),
+( 3 , 'shiva' , 21 , 'software engineer');
+
+
+ALTER TABLE nexusinfo1
+RENAME column id to user_id;
+
+SELECT user_id FROM nexusinfo1;
+SELECT * FROM nexusinfo1;
+SHOW WARNINGS ;
+
+
+
+
+
+
+
 
 
 
