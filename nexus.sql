@@ -51,6 +51,7 @@ CREATE TABLE prompts(
     ON DELETE CASCADE,
     CHECK (
         (plan = 'free' AND no_prompts = 10) OR
+        
         (plan = 'premium' AND no_prompts = 100)
     )
 );
