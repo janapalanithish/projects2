@@ -145,3 +145,62 @@ my_dict = { '1': "one" , '2': "two" , '3': "three" , '4': "four" , '5': "five" ,
 
 for i in range(len(numinp)):
     print(my_dict[numinp[i]])
+
+# checking a number is palindrome or not 
+num = int(input("ENTER THE NUMBER:"))
+
+for i in range(2):
+    n = num % 10
+    m = num // 10
+    y = m // 10
+    x = m % 10
+pali = ((x**3) + (n**3) + (y**3))
+print(pali)
+if(pali == num):
+    print("this is a palindrome")
+else:
+    print("this is not a palindrome")
+
+
+# writing factors of number 
+
+for i in range(1,29):
+    if (28%i == 0):
+        print("the factors of 28" , i)
+
+# reversing a number and convert it into letter 
+#eg : input = 123 , output = three two one 
+
+number = 321
+rev = 0
+
+while number > 0:
+    digit = number % 10
+    rev = rev * 10 + digit
+    number = number // 10
+while rev > 0:
+    digit = rev % 10
+    
+    match digit:
+        case 0:
+            print("Zero", end=" ")
+        case 1:
+            print("One", end=" ")
+        case 2:
+            print("Two", end=" ")
+        case 3:
+            print("Three", end=" ")
+        case 4:
+            print("Four", end=" ")
+        case 5:
+            print("Five", end=" ")
+        case 6:
+            print("Six", end=" ")
+        case 7:
+            print("Seven", end=" ")
+        case 8:
+            print("Eight", end=" ")
+        case 9:
+            print("Nine", end=" ")
+
+    rev = rev // 10

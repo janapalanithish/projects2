@@ -1,2 +1,4 @@
-for i in range(5):
-    print((i+1)*'*' + (5-i)*' ' + (5-i)*' ' + (i+1)*'*')
+for i in range(1,29):
+    if (28%i == 0):
+        print("the factors of 28" , i)
+    
