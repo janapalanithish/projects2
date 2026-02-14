@@ -201,6 +201,83 @@ SELECT user_id FROM nexusinfo1;
 SELECT * FROM nexusinfo1;
 SHOW WARNINGS ;
 
+CREATE DATABASE babu;
+
+USE babu;
+-- learning TRUNCATE command 
+CREATE TABLE bauinfo(
+
+id INT PRIMARY KEY,
+user_name TEXT NOT NULL,
+user_age INT ,
+department TEXT,
+salary INT
+);
+
+INSERT INTO bauinfo(id , user_name , user_age , department , salary)
+
+VALUES 
+(1 , 'nithish' , 18 , 'HR' , 200000),
+(2 , 'kumar' , 19 , 'manager' , 10000000);
+
+TRUNCATE TABLE bauinfo;
+SELECT * FROM bauinfo;
+
+SHOW warnings;
+-- differnece between TRUNCATE , delete , DROP
+CREATE TABLE my_info(
+
+id INT PRIMARY KEY,
+user_name TEXT,
+user_age INT ,
+user_intrest TEXT ,
+user_techstack TEXT 
+);
+INSERT INTO my_info(id , user_name , user_age , user_intrest , user_techstack)
+VALUES 
+(1 , 'nithish' , 18 , 'TECH' , 'HTML CSS JS'),
+(2 , 'karthik' , 20 , 'TECH' , ' DSA ' );
+
+DELETE FROM my_info 
+WHERE user_name = 'nithish';
+SET SQL_SAFE_UPDATES = 0;
+SHOW WARNINGS;
+SELECT * FROM my_info;
+
+
+SELECT * FROM my_info;
+-- learning distinct command 
+CREATE TABLE newinfo(
+id INT PRIMARY KEY,
+user_name TEXT,
+department TEXT,
+salary INT
+);
+INSERT INTO newinfo(id , user_name , department , salary)
+
+VALUES  
+(1 , 'nithish' , ' manager ' , 20000),
+(2 , 'karhik' , 'CEO' , 1000000000),
+(3 , 'nithish' , 'HR' , 20000);
+
+
+SELECT distinct user_name
+FROM newinfo;
+
+SELECT distinct user_name , salary 
+FROM newinfo;
+
+-- multiple distinct columns
+SELECT distinct user_name , salary 
+FROM newinfo;
+
+
+
+
+
+
+
+
 
 
 
