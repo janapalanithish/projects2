@@ -271,6 +271,50 @@ FROM newinfo;
 SELECT distinct user_name , salary 
 FROM newinfo;
 
+CREATE DATABASE newfor;
+
+USE newfor;
+
+CREATE TABLE newwith(
+id INT PRIMARY KEY,
+user_name TEXT NOT NULL,
+age INT,
+salary INT,
+department TEXT NOT NULL
+);
+
+INSERT INTO newwith(id , user_name , age , salary , department)
+VALUES 
+(1,'nithish', 20 , 20000 , 'HR'),
+(2, 'karthik' , 23 , 1234567890 ,'CEO');
+-- using operators 
+SELECT * FROM newwith WHERE age+1=21;
+-- using logic operators 
+SELECT * FROM newwith WHERE age = 20 AND id =2;
+SELECT * FROM newwith WHERE age = 20 OR id =2;
+
+SELECT * FROM newwith WHERE user_name NOT IN ('nithish','karthik');
+
+-- using null/not null
+
+SELECT * FROM newwith WHERE age is NULL;
+
+-- like and wildcard operations 
+
+SELECT * FROM newwith WHERE user_name LIKE 'n%';
+SELECT * FROM newwith WHERE user_name LIKE '_h%';
+
+-- between operator 
+SELECT * FROM newwith WHERE salary BETWEEN 19999 AND 1234567891;
+
+SHOW WARNINGS;
+
+
+
+
+
+
+
 
 
 
