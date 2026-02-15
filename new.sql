@@ -336,6 +336,49 @@ SELECT * FROM collegeinfo;
 SELECT * FROM collegeinfo ORDER BY age ASC;
 
 
+CREATE DATABASE employee;
+
+USE employee;
+
+CREATE TABLE emplinfo(
+id INTEGER PRIMARY KEY,
+user_name VARCHAR(50),
+age INT ,
+salary INT,
+department VARCHAR(10) NOT NULL
+);
+
+INSERT INTO emplinfo(id , user_name , age , salary , department)
+
+VALUES 
+(1 , 'nithish' , 19 , 10000 , 'worker'),
+(2 , 'Karthik' , 21 , 1234567 , 'HR'),
+(3 , 'tanush' , 15 , 654321 , 'CEO');
+-- basic quesry questions
+SELECT * FROM emplinfo
+WHERE id = 2;
+-- using or opeartor 
+SELECT * FROM emplinfo
+WHERE id = 1 OR department = 'HR';
+-- using comparator , logical operator , where cluase 
+SELECT * FROM emplinfo
+WHERE salary > 1200 OR department = 'HR';
+-- using not logical operator 
+SELECT * FROM emplinfo
+WHERE department NOT in('HR');
+-- using ASC/desc operation
+
+SELECT * FROM emplinfo 
+ORDER BY salary DESC;
+-- using two clauses 
+
+
+SELECT * FROM emplinfo 
+ORDER BY salary ASC LIMIT 2;
+
+
+
+
 
 
 
