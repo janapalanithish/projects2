@@ -407,8 +407,58 @@ having avg(marks) > 60;
 
 SHOW WARNINGS;
 
+CREATE DATABASE practise;
+USE practise;
 
+-- 1. Create Parent Table
+CREATE TABLE info(
+    id INT PRIMARY KEY,
+    user_name TEXT,
+    user_role VARCHAR(20),
+    salary INT 
+);
 
+-- 2. Insert Data
+INSERT INTO info(id, user_name, user_role, salary)
+VALUES
+(1, 'nithish', 'HR', 1200),
+(2, 'karthik', 'ceo', 23423),
+(3, 'tanush', 'emplyee', 4322),
+(4, 'sandeep', 'emplyee', 2345);
+
+-- 3. Modify Table (Added DEFAULT '' to handle existing rows)
+ALTER TABLE info 
+ADD user_profile VARCHAR(50) NOT NULL DEFAULT 'Pending';
+
+UPDATE info
+SET user_profile = 'he is an advanced AI specailist'
+WHERE id = 2;
+
+-- 4. Create Child Table with Foreign Key
+CREATE TABLE anoinfo(
+    empl_id INT,              -- Added this column
+    backlogs INT,
+    increment INT,            -- Fixed spelling to 'increment'
+    feedback VARCHAR(50) NOT NULL, -- Increased size to fit your long text
+    FOREIGN KEY (empl_id) REFERENCES info(id)
+);
+
+-- 5. Insert Child Data
+-- Note: All empl_id values here (1, 2, 4, 3) must exist in 'info' table
+INSERT INTO anoinfo(backlogs, increment, feedback, empl_id)
+VALUES 
+(1, 1000, 'good at projct rewiew', 1),
+(0, 2000, 'good at code execution', 2),
+(0, 3000, 'good at project explantion', 4),
+(5, 100, 'good at communication', 3);
+
+SELECT * FROM info;
+SELECT * FROM anoinfo;
+
+-- 6. Delete User (This effectively tests the constraint)
+-- Note: This might fail now because 'anoinfo' depends on ID 1. 
+-- To delete ID 1, you must first delete the row in 'anoinfo' or use ON DELETE CASCADE.
+DELETE FROM info WHERE id = 1;
 
 
 
