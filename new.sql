@@ -376,7 +376,36 @@ ORDER BY salary DESC;
 SELECT * FROM emplinfo 
 ORDER BY salary ASC LIMIT 2;
 
+-- learning the group by and having cluase 
+CREATE DATABASE class;
 
+USE class;
+
+CREATE TABLE classinfo(
+id INTEGER PRIMARY KEY,
+marks INTEGER,
+section varchar(20) NOT NULL
+);
+
+INSERT INTO classinfo(id , marks , section)
+VALUES 
+(1 , 70 , 'a'),
+(2 , 69 , 'a'),
+(3 , 93 , 'a'),
+(4 , 92 , 'b'),
+(5 , 92 , 'b'),
+(6 , 23 , 'c'),
+(7 , 93 , 'c'),
+(8 , 100 , 'c'),
+(9 , 82 , 'a'),
+(10 , 83 , 'b');
+
+SELECT section , avg(marks) AS avgmarks 
+FROM classinfo
+GROUP BY section
+having avg(marks) > 60;
+
+SHOW WARNINGS;
 
 
 
