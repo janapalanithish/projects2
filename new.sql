@@ -309,12 +309,31 @@ SELECT * FROM newwith WHERE salary BETWEEN 19999 AND 1234567891;
 
 SHOW WARNINGS;
 
+CREATE TABLE collegeinfo(
+id INT PRIMARY KEY,
+user_name TEXT,
+age INT,
+college_name TEXT NOT NULL
+);
 
+INSERT INTO collegeinfo(id , user_name , age ,college_name)
 
+VALUES
+(1,'hindooj' , 19 , 'ANITS'),
+(2 , 'lohit' , 21 , 'ANITS'),
+(3, 'rutwik' , 19 , 'ANITS');
+-- learning about limit command 
+SELECT * FROM collegeinfo LIMIT 2;
 
+-- order by  command 
+SELECT * FROM collegeinfo ORDER BY age DESC;
 
+UPDATE collegeinfo
+SET user_name = 'lohit'
+WHERE id = 5;
 
-
+SELECT * FROM collegeinfo;
+SELECT * FROM collegeinfo ORDER BY age ASC;
 
 
 
