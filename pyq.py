@@ -287,3 +287,14 @@ if(pal == 121):
         print("this is a plaindrome")
 else:
       print("this is not a plaindrome")
+# priting the numbers upto 10 and uppercase and lower case letters upto (A-Z) and (a-z)
+import string
+for i in range(10):
+    print(i , end="")
+
+for letter in string.ascii_uppercase:
+    print(letter , end = "")
+for letter in string.ascii_lowercase:
+    print(letter , end="")
+
+
