@@ -1,3 +1,4 @@
+[
 {
   "instruction": "Subject: Cyberpunk street food market | Style: Cinematic | Mood: Rainy and energetic",
   "output": {
@@ -11,4 +12,425 @@
     "detail_enhancements": "Steam rising from food stalls, crowd motion blur",
     "render_quality": "8K ultra-detailed, hyper realistic"
   }
+},
+{
+  "instruction": "Subject: Ancient warrior in desert battlefield | Style: Oil painting | Mood: Epic and dramatic",
+  "output": {
+    "main_subject": "Ancient armored warrior standing on a desert battlefield",
+    "environment": "Vast desert landscape with scattered ruins and blowing sand",
+    "art_style": "Classical oil painting with rich textured brush strokes",
+    "mood": "Epic and dramatic atmosphere",
+    "lighting": "Golden hour sunlight casting long intense shadows",
+    "camera": "Low angle heroic perspective",
+    "color_palette": "Warm earth tones, deep reds, and burnt orange",
+    "detail_enhancements": "Flowing cape, distant army silhouettes, dust particles in the air",
+    "render_quality": "Ultra-detailed, high-resolution fine art quality"
+  }
+},
+{
+  "instruction": "Subject: Post-apocalyptic urban city ruins | Style: Photorealistic | Mood: Dark and gritty",
+  "output": {
+    "main_subject": "Abandoned post-apocalyptic city street covered in debris",
+    "environment": "Collapsed skyscrapers with overgrown vegetation reclaiming the city",
+    "art_style": "Photorealistic cinematic photography",
+    "mood": "Dark and gritty atmosphere",
+    "lighting": "Low natural light with dramatic shadow contrast",
+    "camera": "Eye-level 35mm documentary-style perspective",
+    "color_palette": "Desaturated gray, muted green, and dusty brown tones",
+    "detail_enhancements": "Broken vehicles, cracked asphalt, scattered smoke in the distance",
+    "render_quality": "Hyper realistic, ultra-detailed, 8K clarity"
+  }
+},
+{
+  "instruction": "Subject: Enchanted floating island kingdom | Style: Fantasy illustration | Mood: Dreamlike and magical",
+  "output": {
+    "main_subject": "Massive floating island kingdom suspended in the sky",
+    "environment": "Cloud-filled sky with cascading waterfalls falling into the void",
+    "art_style": "Highly detailed fantasy illustration",
+    "mood": "Dreamlike and magical atmosphere",
+    "lighting": "Soft golden sunlight mixed with glowing magical aura",
+    "camera": "Wide panoramic aerial perspective",
+    "color_palette": "Soft gold, sky blue, and pastel pink tones",
+    "detail_enhancements": "Floating crystals, flying creatures, ancient stone towers",
+    "render_quality": "Ultra-detailed, high-resolution fantasy artwork"
+  }
+},
+{
+  "instruction": "Subject: Futuristic underwater research lab | Style: 3D render | Mood: Calm and mysterious",
+  "output": {
+    "main_subject": "Futuristic underwater research laboratory with transparent glass domes",
+    "environment": "Deep ocean floor surrounded by coral reefs and bioluminescent marine life",
+    "art_style": "High-end realistic 3D render",
+    "mood": "Calm and mysterious atmosphere",
+    "lighting": "Soft blue underwater light rays with subtle volumetric glow",
+    "camera": "Wide cinematic angle slightly elevated perspective",
+    "color_palette": "Deep blue, teal, and soft cyan highlights",
+    "detail_enhancements": "Floating research drones, distant whales, light refractions through water",
+    "render_quality": "Ultra-detailed, 8K resolution, sharp focus"
+  }
+},
+{
+  "instruction": "Subject: Cyberpunk night market | Style: Digital Concept Art | Mood: Vibrant and chaotic",
+  "output": {
+    "main_subject": "Bustling street food vendor stall with neon signage and robotic chef",
+    "environment": "Rain-slicked futuristic alleyway crowded with diverse cyborgs and humans",
+    "art_style": "High-contrast digital concept art with anime influences",
+    "mood": "Vibrant, chaotic, and energetic atmosphere",
+    "lighting": "Neon pink and green sign reflections mixed with steam from cooking vents",
+    "camera": "Eye-level handheld camera perspective with shallow depth of field",
+    "color_palette": "Electric purple, neon green, and deep charcoal blacks",
+    "detail_enhancements": "Holographic advertisements, hanging wires, wet pavement textures",
+    "render_quality": "Ultra-detailed, 8K resolution, cinematic composition"
+  }
+},
+{
+  "instruction": "Subject: Victorian detective's office | Style: Film Noir Photography | Mood: Suspenseful and moody",
+  "output": {
+    "main_subject": " cluttered vintage desk with a smoking cigarette and scattered case files",
+    "environment": "Dimly lit 1940s office with rain streaking against the window pane",
+    "art_style": "Black and white film noir photography",
+    "mood": "Suspenseful, mysterious, and moody atmosphere",
+    "lighting": "High-contrast chiaroscuro lighting from streetlamps outside venetian blinds",
+    "camera": "Dutch angle close-up focusing on the desk details",
+    "color_palette": "Monochromatic grayscale with deep blacks and stark whites",
+    "detail_enhancements": "Wisps of smoke, dust motes in light beams, silhouette of a figure at the door",
+    "render_quality": "Photorealistic, grainy film texture, 4K resolution"
+  }
+},
+{
+  "instruction": "Subject: Solitary lighthouse on a cliff | Style: Watercolor Painting | Mood: Melancholic and serene",
+  "output": {
+    "main_subject": "Weathered white lighthouse standing tall on a jagged cliff edge",
+    "environment": "Stormy grey ocean with waves crashing against the rocks below",
+    "art_style": "Soft and fluid watercolor painting with paper texture visibility",
+    "mood": "Melancholic, isolated, and serene atmosphere",
+    "lighting": "Diffused overcast skylight with a single warm yellow beam from the lighthouse",
+    "camera": "Distant wide shot capturing the scale of the ocean",
+    "color_palette": "Muted blues, greys, washed-out greens, and a touch of warm yellow",
+    "detail_enhancements": "Flying seagulls, wet paint bleeds for clouds, texture of rough paper",
+    "render_quality": "High-resolution scan quality, artistic and expressive"
+  }
+},
+{
+  "instruction": "Subject: Giant mech in maintenance hangar | Style: Industrial Sci-Fi | Mood: Gritty and technical",
+  "output": {
+    "main_subject": "Colossal battle mech undergoing repairs with open armor panels",
+    "environment": "Massive industrial hangar bay with scaffolding and sparks flying",
+    "art_style": "Hard-surface 3D modeling with realistic metallic textures",
+    "mood": "Gritty, technical, and awe-inspiring atmosphere",
+    "lighting": "Cold industrial floodlights overhead with orange glow from welding torches",
+    "camera": "Low angle looking up to emphasize the scale of the machine",
+    "color_palette": "Gunmetal grey, caution yellow, and rust orange",
+    "detail_enhancements": "Tiny mechanics on scaffolding, oil stains, scratched metal surfaces",
+    "render_quality": "Unreal Engine 5 render, ray-traced reflections, 8K sharpness"
+  }
+},
+{
+  "instruction": "Subject: Minimalist zen garden | Style: Low Poly 3D | Mood: Peaceful and geometric",
+  "output": {
+    "main_subject": "Perfectly raked sand garden with a single bonsai tree and rocks",
+    "environment": "Floating geometric island in a void of soft gradient color",
+    "art_style": "Low poly 3D art with flat shading and clean edges",
+    "mood": "Peaceful, organized, and meditative atmosphere",
+    "lighting": "Soft ambient occlusion with no harsh shadows",
+    "camera": "Isometric view (orthographic projection) from a 45-degree angle",
+    "color_palette": "Pastel greens, soft sand beige, and light blue",
+    "detail_enhancements": "Floating geometric shapes, simple falling leaves, clean polygon faces",
+    "render_quality": "Clean vector-style render, 4K resolution, minimalist aesthetic"
+  }
+},
+{
+  "instruction": "Subject: Cosmic horror entity in space | Style: Surrealist Oil | Mood: Terrifying and abstract",
+  "output": {
+    "main_subject": "Incomprehensible tentacled entity emerging from a black hole",
+    "environment": "Deep space background distorted by gravitational lensing and nebula gas",
+    "art_style": "Surrealist oil painting in the style of Zdzisław Beksiński",
+    "mood": "Terrifying, abstract, and unsettling atmosphere",
+    "lighting": "Eerie violet and deep red cosmic radiation glow",
+    "camera": "Disorienting wide angle with twisted perspective",
+    "color_palette": "Deep crimson, void black, bruised purple, and sickly green",
+    "detail_enhancements": "Distorted stars, organic textures on the entity, swirling gas clouds",
+    "render_quality": "Intricate brushwork details, high-resolution fine art scan"
+  }
+},
+{
+  "instruction": "Subject: Steam-powered airship | Style: Steampunk illustration | Mood: Adventurous and mechanical",
+  "output": {
+    "main_subject": "Massive brass and copper dirigible floating through clouds",
+    "environment": "Victorian-era industrial skyline with smokestacks below",
+    "art_style": "Detailed Steampunk technical illustration",
+    "mood": "Adventurous and mechanical atmosphere",
+    "lighting": "Golden sunset reflecting off polished brass gears",
+    "camera": "Side-profile tracking shot capturing movement",
+    "color_palette": "Bronze, copper, leather brown, and steam white",
+    "detail_enhancements": "Spinning propellers, escaping steam jets, crew visible on deck",
+    "render_quality": "Intricate line work, vintage texture, high definition"
+  }
+},
+{
+  "instruction": "Subject: Morning dew on a spiderweb | Style: Macro nature photography | Mood: Delicate and fresh",
+  "output": {
+    "main_subject": "Intricate spiderweb pattern covered in tiny water droplets",
+    "environment": " blurred green garden background in early morning",
+    "art_style": "High-end macro nature photography",
+    "mood": "Delicate, fresh, and tranquil atmosphere",
+    "lighting": "Soft morning sunlight refracting through water drops like prisms",
+    "camera": "Extreme close-up macro lens with bokeh background",
+    "color_palette": "Fresh vivid greens, crystal clear whites, and silver",
+    "detail_enhancements": "Rainbow spectrum inside droplets, fine silk textures, a single leaf",
+    "render_quality": "Hyper-realistic, sharpest focus on droplets, 8K resolution"
+  }
+},
+{
+  "instruction": "Subject: Retro sports car chase | Style: Synthwave 80s aesthetic | Mood: Nostalgic and electric",
+  "output": {
+    "main_subject": "Sleek 1980s sports car speeding down a grid-lined highway",
+    "environment": "Endless digital horizon with a massive setting wireframe sun",
+    "art_style": "Synthwave / Vaporwave digital art style",
+    "mood": "Nostalgic, electric, and fast-paced atmosphere",
+    "lighting": "Neon pink and cyan glow against a deep starry night sky",
+    "camera": "Low angle from the rear bumper looking forward",
+    "color_palette": "Hot pink, cyan blue, deep violet, and sunset orange",
+    "detail_enhancements": "Laser grid floor, motion blur on wheels, retro chrome reflections",
+    "render_quality": "Clean digital gradient, 4K resolution, vibrant colors"
+  }
+},
+{
+  "instruction": "Subject: Haunted gothic mansion | Style: Charcoal sketch | Mood: Spooky and vintage",
+  "output": {
+    "main_subject": "Dilapidated Victorian mansion on a hill with boarded windows",
+    "environment": "Dead forest with gnarled trees and thick rolling fog",
+    "art_style": "Rough and expressive charcoal sketch on textured paper",
+    "mood": "Spooky, vintage, and unsettling atmosphere",
+    "lighting": "Moonlight struggling through clouds creating harsh shadows",
+    "camera": "Low angle tilt-up emphasizing the height of the house",
+    "color_palette": "Black, varying shades of grey, and paper white",
+    "detail_enhancements": "Bats circling the tower, smudged shadows, scratchy texture lines",
+    "render_quality": "High-fidelity scan of traditional media, raw and artistic"
+  }
+},
+{
+  "instruction": "Subject: Eco-futurist vertical garden | Style: Architectural Visualization | Mood: Utopian and bright",
+  "output": {
+    "main_subject": "Twisting glass skyscraper covered in lush vertical forests",
+    "environment": "Clean futuristic city with flying electric transport and blue skies",
+    "art_style": "Photorealistic architectural visualization (ArchViz)",
+    "mood": "Utopian, bright, and optimistic atmosphere",
+    "lighting": "Bright midday sun with clear soft shadows",
+    "camera": "Drone shot looking down at the building's terrace",
+    "color_palette": "White concrete, vibrant leaf greens, and sky blue",
+    "detail_enhancements": "People relaxing on roof gardens, solar panels, birds flying",
+    "render_quality": "V-Ray render quality, crisp edges, realistic foliage"
+  }
+},
+{
+  "instruction": "Subject: Papercut fairytale forest | Style: Layered paper light box | Mood: Whimsical and warm",
+  "output": {
+    "main_subject": "Silhouette of a deer standing in a layered paper forest",
+    "environment": "Multiple layers of paper cutouts creating depth and tunnels",
+    "art_style": "Papercut light box art style",
+    "mood": "Whimsical, warm, and magical atmosphere",
+    "lighting": "Backlit from behind creating a glowing gradient through the paper layers",
+    "camera": "Front-facing flat view showing the depth of layers",
+    "color_palette": "Warm amber, deep orange, fading into dark brown silhouettes",
+    "detail_enhancements": "Texture of paper grain, soft light bleed around edges, intricate cuts",
+    "render_quality": "3D render simulating physical paper craft, 4K resolution"
+  }
+},
+{
+  "instruction": "Subject: Explosion of colored powder | Style: High-speed photography | Mood: Energetic and abstract",
+  "output": {
+    "main_subject": "Burst of Holi powder paints freezing in mid-air",
+    "environment": "Pitch black studio background to isolate the colors",
+    "art_style": "High-speed studio photography",
+    "mood": "Energetic, dynamic, and abstract atmosphere",
+    "lighting": "Multi-directional studio flash freezing the motion",
+    "camera": "Telephoto lens compressing the cloud of dust",
+    "color_palette": "Vivid red, yellow, blue, and purple against black",
+    "detail_enhancements": "Individual particles of dust, cloud formations, mixture of colors",
+    "render_quality": "Crystal clear, frozen motion, ultra-high contrast"
+  }
+},
+{
+  "instruction": "Subject: Neon graffiti mural | Style: Urban street photography | Mood: Rebellious and bold",
+  "output": {
+    "main_subject": "Large colorful spray-paint mural of a robotic face on a brick wall",
+    "environment": "Gritty concrete alleyway with scattered trash cans",
+    "art_style": "Raw urban street photography",
+    "mood": "Rebellious, bold, and vibrant atmosphere",
+    "lighting": "Harsh midday sunlight casting hard shadows from fire escapes",
+    "camera": "Straight-on wide shot capturing the entire wall texture",
+    "color_palette": "Acid yellow, electric blue, hot pink, and concrete grey",
+    "detail_enhancements": "Drips of dry paint, cracking brick texture, peeling posters",
+    "render_quality": "High contrast, sharp texture details, 4K resolution"
+  }
+},
+{
+  "instruction": "Subject: Tiny village inside a lightbulb | Style: Macro 3D render | Mood: Whimsical and cozy",
+  "output": {
+    "main_subject": "Miniature cottage with smoke rising from chimney inside a glass bulb",
+    "environment": "A cluttered wooden inventor's desk in the background",
+    "art_style": "Photorealistic macro 3D visualization",
+    "mood": "Whimsical, cozy, and magical atmosphere",
+    "lighting": "Warm filament glow from within the bulb illuminating the tiny house",
+    "camera": "Macro lens with extreme shallow depth of field (bokeh)",
+    "color_palette": "Warm amber, moss green, wood brown, and glass reflections",
+    "detail_enhancements": "Dust on glass surface, tiny trees, filament wires, metallic base",
+    "render_quality": "Octane render, ray-tracing, ultra-detailed textures"
+  }
+},
+{
+  "instruction": "Subject: Renaissance masquerade ball | Style: Baroque oil painting | Mood: Opulent and secretive",
+  "output": {
+    "main_subject": "Elegant nobles dancing in elaborate venetian masks and velvet gowns",
+    "environment": "Grand ballroom with crystal chandeliers and gold leaf architecture",
+    "art_style": "Classical Baroque oil painting with dramatic contrast",
+    "mood": "Opulent, secretive, and romantic atmosphere",
+    "lighting": "Warm candlelight glow with deep chiaroscuro shadows",
+    "camera": "Eye-level perspective amidst the dancing crowd",
+    "color_palette": "Deep velvet red, gold, midnight blue, and warm skin tones",
+    "detail_enhancements": "Silk fabric sheen, intricate mask patterns, flickering candle flames",
+    "render_quality": "Museum quality fine art, rich brushstrokes, high definition"
+  }
+},
+{
+  "instruction": "Subject: T-Rex in prehistoric jungle | Style: Paleoart illustration | Mood: Primal and intense",
+  "output": {
+    "main_subject": "Roaring Tyrannosaurus Rex chasing a herd of Triceratops",
+    "environment": "Dense Cretaceous jungle with giant ferns and volcanic smoke",
+    "art_style": "Scientific paleoart illustration with realistic textures",
+    "mood": "Primal, intense, and dangerous atmosphere",
+    "lighting": "Dappled sunlight filtering through thick canopy leaves",
+    "camera": "Low angle action shot capturing the scale of the dinosaur",
+    "color_palette": "Earthy greens, muddy browns, and vibrant lizard scales",
+    "detail_enhancements": "Scales texture, saliva flying, birds fleeing in background",
+    "render_quality": "Highly detailed, scientifically accurate, 8K resolution"
+  }
+},
+{
+  "instruction": "Subject: 8-bit retro game city | Style: Pixel Art | Mood: Fun and nostalgic",
+  "output": {
+    "main_subject": "Isometric cityscape with blocky cars and tiny pedestrians",
+    "environment": "Vibrant blue sky with pixelated clouds",
+    "art_style": "Classic 8-bit or 16-bit pixel art graphics",
+    "mood": "Fun, nostalgic, and playful atmosphere",
+    "lighting": "Flat bright lighting typical of retro video games",
+    "camera": "Isometric top-down view",
+    "color_palette": "Limited palette of primary colors (red, blue, yellow, green)",
+    "detail_enhancements": "Coin pickups, heart icons, distinct pixel grid edges",
+    "render_quality": "Sharp pixel edges, no anti-aliasing, retro aesthetic"
+  }
+},
+{
+  "instruction": "Subject: Cowboy duel at high noon | Style: Spaghetti Western film | Mood: Tense and gritty",
+  "output": {
+    "main_subject": "Grit-covered gunslinger with hand hovering over holster",
+    "environment": "Dusty wooden town street with tumbleweeds rolling by",
+    "art_style": "Cinematic Spaghetti Western film photography",
+    "mood": "Tense, gritty, and suspenseful atmosphere",
+    "lighting": "Harsh, blinding midday sun casting short hard shadows",
+    "camera": "Extreme close-up on the eyes (squinting)",
+    "color_palette": "Sepia tones, faded denim blue, and dry beige",
+    "detail_enhancements": "Beads of sweat, worn leather texture, heat haze shimmering",
+    "render_quality": "Film grain texture, Technicolor style, high contrast"
+  }
+},
+{
+  "instruction": "Subject: Stained glass cathedral window | Style: Gothic Architecture | Mood: Spiritual and colorful",
+  "output": {
+    "main_subject": "Intricate rose window depicting angelic figures",
+    "environment": "Dark stone interior of a Gothic cathedral",
+    "art_style": "Traditional stained glass craftsmanship",
+    "mood": "Spiritual, colorful, and awe-inspiring atmosphere",
+    "lighting": "Bright sunlight streaming through glass painting colored beams on floor",
+    "camera": "Symmetrical shot looking directly up at the window",
+    "color_palette": "Jewel tones: ruby red, sapphire blue, emerald green, and gold",
+    "detail_enhancements": "Lead caming lines, dust motes in colored light, stone texture",
+    "render_quality": "High dynamic range, radiant colors, sharp geometric details"
+  }
+},
+{
+  "instruction": "Subject: Cute clay monster | Style: Stop-motion animation | Mood: Playful and handmade",
+  "output": {
+    "main_subject": "Friendly orange monster with three eyes waving hello",
+    "environment": "Miniature cardboard set resembling a forest",
+    "art_style": "Claymation / Stop-motion photography style",
+    "mood": "Playful, handmade, and charming atmosphere",
+    "lighting": "Soft studio lighting setup mimicking daylight",
+    "camera": "Eye-level shot with shallow depth of field",
+    "color_palette": "Bright plasticine colors: orange, lime green, and sky blue",
+    "detail_enhancements": "Fingerprints on clay, slightly uneven surface, fuzz on felt props",
+    "render_quality": "Realistic texture of modeling clay, 4K macro photography"
+  }
+},
+{
+  "instruction": "Subject: Greek marble statue | Style: Museum Photography | Mood: Timeless and elegant",
+  "output": {
+    "main_subject": "Bust of a Greek god with curly hair and stoic expression",
+    "environment": "Minimalist museum gallery with grey walls",
+    "art_style": "Professional fine art museum photography",
+    "mood": "Timeless, elegant, and contemplative atmosphere",
+    "lighting": "Soft directional museum spotlight emphasizing form",
+    "camera": "Portrait focal length (85mm) front view",
+    "color_palette": "Cool white marble, neutral greys, and soft shadows",
+    "detail_enhancements": "Chisel marks, subtle veins in marble, smooth polished finish",
+    "render_quality": "Ultra-sharp, high contrast black and white conversion"
+  }
+},
+{
+  "instruction": "Subject: Astronaut on Mars surface | Style: Sci-Fi Realism | Mood: Isolated and scientific",
+  "output": {
+    "main_subject": "Astronaut in white suit collecting soil samples",
+    "environment": "Red dusty landscape of Mars with a rover in the background",
+    "art_style": "Hyper-realistic sci-fi movie still (The Martian style)",
+    "mood": "Isolated, scientific, and explorative atmosphere",
+    "lighting": "Warm reddish sunlight with long distinct shadows",
+    "camera": "Wide shot capturing the vastness of the planet",
+    "color_palette": "Rust red, burnt orange, bright white, and gold visor reflection",
+    "detail_enhancements": "Dust on space suit, tire tracks in sand, distant mountains",
+    "render_quality": "IMAX cinematic quality, 8K resolution, detailed textures"
+  }
+},
+{
+  "instruction": "Subject: Knitted wool landscape | Style: Textile Art | Mood: Warm and fuzzy",
+  "output": {
+    "main_subject": "Rolling hills made of green yarn with cotton ball sheep",
+    "environment": "A sky made of blue felt with button sun",
+    "art_style": "Knitted and crocheted textile art visualization",
+    "mood": "Warm, fuzzy, and comforting atmosphere",
+    "lighting": "Soft, diffused lighting enhancing the fabric texture",
+    "camera": "Macro shot to show the individual yarn fibers",
+    "color_palette": "Soft pastel wool colors, creamy white, and grassy green",
+    "detail_enhancements": "Fraying wool fibers, visible stitch patterns, tactile depth",
+    "render_quality": "3D render simulating realistic fabric physics, high resolution"
+  }
+},
+{
+  "instruction": "Subject: Samurai training dojo | Style: Ukiyo-e Woodblock Print | Mood: Disciplined and traditional",
+  "output": {
+    "main_subject": "Samurai silhouette practicing with a katana sword",
+    "environment": "Traditional Japanese dojo with tatami mats and paper doors",
+    "art_style": "Japanese Ukiyo-e woodblock print style (Hokusai inspired)",
+    "mood": "Disciplined, traditional, and focused atmosphere",
+    "lighting": "Flat, stylized lighting with bold outlines",
+    "camera": "Side profile composition",
+    "color_palette": "Indigo blue, parchment beige, faded red, and black ink",
+    "detail_enhancements": "Wood grain texture, paper texture, flowing fabric lines",
+    "render_quality": "Artistic, high-resolution scan of vintage print"
+  }
+},
+{
+  "instruction": "Subject: Candy fantasy land | Style: 3D Cartoon | Mood: Sweet and cheerful",
+  "output": {
+    "main_subject": "Castle made of waffle cones, ice cream, and donuts",
+    "environment": "River of chocolate flowing through lollipop trees",
+    "art_style": "Vibrant 3D cartoon style (Pixar/Disney aesthetic)",
+    "mood": "Sweet, cheerful, and energetic atmosphere",
+    "lighting": "Bright, high-key lighting with glossy reflections",
+    "camera": "Aerial view flying over the landscape",
+    "color_palette": "Candy pink, chocolate brown, mint green, and sugar white",
+    "detail_enhancements": "Sprinkles, glistening sugar coating, melting ice cream textures",
+    "render_quality": "RenderMan quality, subsurface scattering on candy, 4K"
+  }
 }
+]
