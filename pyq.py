@@ -298,3 +298,16 @@ for letter in string.ascii_lowercase:
     print(letter , end="")
 
 
+for i in range(0,10):
+    print(i , end=" ")
+for i in range(65,91):
+    print(chr(i) , end =" ")
+for i in range(97,123):
+    print(chr(i) , end= " ")
+
+cities = ['Australia' , 'india' , 'chile' , 'china' , 'canada']
+for c in cities:
+    cities.remove(c)
+    print(cities)
+
+
