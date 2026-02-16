@@ -460,9 +460,61 @@ SELECT * FROM anoinfo;
 -- To delete ID 1, you must first delete the row in 'anoinfo' or use ON DELETE CASCADE.
 DELETE FROM info WHERE id = 1;
 
+CREATE DATABASE must;
+
+USE must;
+
+CREATE TABLE mustinfo(
+id INTEGER PRIMARY KEY,
+user_name VARCHAR(50),
+salary INT ,
+department TEXT 
+);
+INSERT INTO mustinfo(id , user_name , salary , department)
+VALUES
+(1 , 'nithish' , 65432 ,'IT'),
+(2 , 'kuamr' , 65432 , 'ECE'),
+(3 , 'lohit' , 23456 , 'CSM');
+-- count function
+SELECT count(user_name) FROM mustinfo;
+-- sum function
+SELECT sum(salary) FROM mustinfo;
+
+UPDATE mustinfo 
+SET salary = 65433
+WHERE id = 2;
+-- max function
+SELECT MAX(salary) FROM mustinfo;
+-- min function 
+SELECT MIN(salary) FROM mustinfo;
+-- avg function
+SELECT AVG(salary) FROM mustinfo;
+
+SELECT COUNT(department) FROM mustinfo;
+SELECT * FROM mustinfo;
+
+SELECT avg(salary) FROM mustinfo WHERE id =1;
+SELECT * FROM mustinfo;
+
+-- group by and having 
+SELECT department ,  avg(salary) FROM mustinfo
+group by department 
+having salary > 100000;
+
+SELECT department , user_name , avg(salary) FROM mustinfo
+GROUP BY department , user_name 
+having salary > 10000
 
 
 
+
+
+
+
+
+
+
+ 
 
 
 
