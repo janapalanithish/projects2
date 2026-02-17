@@ -505,16 +505,30 @@ SELECT department , user_name , avg(salary) FROM mustinfo
 GROUP BY department , user_name 
 having salary > 10000
 
+CREATE DATABASE info;
+
+USE info;
+
+CREATE TABLE info1(
+id INT PRIMARY KEY ,
+city VARCHAR(50),
+salary INT
+);
+INSERT INTO info1(id , city , salary)
+
+VALUES
+(1 , 'vizag' , 6543),
+(2 , 'VIZ' , 5432),
+(3 , 'guntur' , 23456);
+
+SELECT city , MAX(salary)  AS max_sal
+FROM info1
+GROUP BY city
+ ORDER BY max_sal DESC;
+
+SELECT department , count(
 
 
-
-
-
-
-
-
-
- 
 
 
 
