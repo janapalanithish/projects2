@@ -528,6 +528,36 @@ GROUP BY city
 
 SELECT department , count(
 
+-- practice questions 
+CREATE DATABASE empl1;
+
+USE empl1;
+
+CREATE TABLE emplinfo1(
+id INT PRIMARY KEY,
+department VARCHAR(50),
+salary INT 
+);
+
+INSERT INTO emplinfo1(id , department , salary)
+
+VALUES 
+(1 , 'HR' , 1000),
+(2 , 'IT' , 1200),
+(3 , 'HR' , 1300),
+(4 , 'IT' , 1400);
+
+
+SELECT department , AVG(salary) AS avg_sal 
+FROM emplinfo1
+GROUP BY department 
+HAVING avg_sal > 1000;
+
+SHOW WARNINGS;
+
+
+
+
 
 
 
