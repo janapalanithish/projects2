@@ -597,7 +597,40 @@ FROM x_a;
 
 SHOW WARNINGS;
 
+CREATE DATABASE w1;
 
+USE w1;
+
+CREATE TABLE w2( 
+id INT PRIMARY KEY,
+department VARCHAR(50)
+);
+INSERT INTO w2(id , department)
+
+VALUES
+(1 , 'ECE'),
+(2 , 'IT'),
+(3 , 'ECE'),
+(4 , 'CSE');
+
+CREATE TABLE w3(
+id INT,
+cgpa INT 
+);
+-- inner join function 
+INSERT INTO w3(id , cgpa)
+VALUES
+(2 , 9.0),
+(3 , 7.6),
+(4, 9.3),
+(5 , 7.6);
+
+SELECT w2.id , w2.department , w3.cgpa
+FROM w2
+INNER JOIN w3
+ON w2.id = w3.id;
+
+SHOW WARNINGS;
 
 
 
