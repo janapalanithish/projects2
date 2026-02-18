@@ -631,7 +631,31 @@ INNER JOIN w3
 ON w2.id = w3.id;
 
 SHOW WARNINGS;
+ 
+ CREATE DATABASE v3;
 
+USE v3;
+
+CREATE TABLE v0(
+id INT PRIMARY KEY,
+section VARCHAR(20)
+);
+-- interview questons
+INSERT INTO v0(id , section)
+VALUES
+(1 , 'C'),
+(2 , 'A'),
+(3 , 'A'),
+(4 , 'C'),
+(5 , 'null');
+
+UPDATE v0
+SET section = NULL 
+WHERE id = 5;
+
+SELECT section , count(section)
+FROM v0
+GROUP BY section;
 
 
 
