@@ -555,6 +555,47 @@ HAVING avg_sal > 1000;
 
 SHOW WARNINGS;
 
+CREATE DATABASE x1;
+
+USE x1;
+
+CREATE TABLE x_a(
+id INT PRIMARY KEY ,
+user_name VARCHAR(50) NOT NULL,
+salary INT,
+department TEXT NOT NULL
+);
+
+INSERT INTO x_a(id , user_name , salary , department)
+
+VALUES
+(1 , 'nithish' , 65432 , 'IT'),
+(2 , 'karthik' , 23456 , 'IT'),
+(3 , 'tanush' , 23456 , 'HR');
+-- alter add command 
+ALTER TABLE x_a
+ADD user_info VARCHAR(50) NOT NULL;
+-- alter drop command
+ALTER TABLE x_a
+DROP column user_info;
+-- alter modify command
+ALTER TABLE x_a
+MODIFY department VARCHAR(50);
+-- alter change command
+ALTER TABLE x_a
+CHANGE user_name empl_name TEXT;
+
+SELECT * FROM x_a;
+-- alter rename command 
+ALTER TABLE x_a
+RENAME COLUMN  salary to montly_salary;
+
+-- distinct command 
+SELECT distinct empl_name , department 
+FROM x_a;
+
+
+SHOW WARNINGS;
 
 
 
