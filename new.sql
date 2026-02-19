@@ -656,6 +656,57 @@ WHERE id = 5;
 SELECT section , count(section)
 FROM v0
 GROUP BY section;
+CREATE DATABASE m1;
+
+USE m1;
+
+CREATE TABLE m2(
+id INT,
+user_name VARCHAR(50)
+);
+INSERT INTO m2(id , user_name)
+VALUES 
+(1 , 'nithish'),
+(2 , 'kumar'),
+(3 , 'yashimina');
+
+CREATE TABLE m3(
+id iNT,
+subject_name VARCHAR(50)
+);
+
+INSERT INTO m3(id , subject_name)
+
+VALUES 
+(2 , 'maths'),
+(3 , 'english'),
+(4 , 'you');
+-- left join
+SELECT  user_name , subject_name
+FROM m2
+LEFT JOIN m3
+ON m2.id = m3.id;
+-- right join
+SELECT *
+FROM m2
+RIGHT JOIN m3
+ON m2.id = m3.id;
+-- innner join 
+SELECT * 
+FROM m2 
+INNER JOIN m3
+ON m2.id = m3.id;
+-- full join
+SELECT * 
+FROM m2
+FULL JOIN m3
+ON m2.id = m3.id;
+
+SHOW WARNINGS;
+
+
+
+
 
 
 
