@@ -705,6 +705,46 @@ ON m2.id = m3.id;
 SHOW WARNINGS;
 
 
+CREATE DATABASE d1;
+
+USE d1;
+
+CREATE TABLE d2(
+id INT PRIMARY KEY ,
+user_name VARCHAR(50)
+);
+
+INSERT INTO d2(id , user_name)
+
+VALUES
+(1 , 'nithish'),
+(2 , 'karthik'),
+(3 , 'tanush');
+
+CREATE TABLE d3(
+id INT ,
+department VARCHAR(50)
+);
+INSERT INTO d3(id , department)
+
+VALUES
+(2 , 'IT'),
+(3 , 'ECE'),
+(4 , 'CSE');
+-- full outer join
+SELECT *
+FROM d2
+LEFT JOIN d3 
+ON d2.id = d3.id
+
+UNION
+
+SELECT *
+FROM d2
+RIGHT JOIN d3 
+ON d2.id = d3.id;
+
+SHOW WARNINGS;
 
 
 
