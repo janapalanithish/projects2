@@ -696,20 +696,77 @@ SELECT *
 FROM m2 
 INNER JOIN m3
 ON m2.id = m3.id;
--- full join
-SELECT * 
-FROM m2
-FULL JOIN m3
-ON m2.id = m3.id;
+
 
 SHOW WARNINGS;
-
 
 -- cross join 
 SELECT * 
 FROM d2 
 CROSS JOIN d3;
+CREATE DATABASE IF NOT exists m1;
 
+USE m1;
+
+CREATE TABLE m2(
+id INT PRIMARY KEY,
+user_name VARCHAR(50)
+);
+
+INSERT INTO m2(id , user_name)
+VALUES
+(1 , 'nithish'),
+(2 , 'karthik'),
+(3 , 'tanush'),
+(4 , 'sandeep');
+
+CREATE TABLE m3(
+id INT ,
+salary INT 
+);
+INSERT INTO m3(id , salary)
+
+VALUES
+(1 , 234567),
+(2 ,6543),
+(3 , 234567),
+(4 ,654334),
+(5 , 987654);
+
+SELECT *
+FROM m2
+INNER JOIN m3
+ON m2.id = m3.id;
+
+
+SELECT *
+FROM m2
+RIGHT JOIN m3
+ON m2.id = m3.id;
+
+SELECT *
+FROM m2
+LEFT JOIN m3
+ON m2.id = m3.id;
+
+SELECT *
+FROM m2
+CROSS JOIN m2;
+
+
+SELECT *
+FROM m2
+LEFT JOIN m3
+ON m2.id = m3.id;
+UNION 
+SELECT *
+FROM m2
+RIGHT JOIN m3
+ON m2.id = m3.id;
+
+SHOW WARNINGS;
+
+ 
 
 
 
