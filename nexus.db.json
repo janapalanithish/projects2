@@ -1,0 +1,10 @@
+{
+  "users": [
+    { "id": 1, "user_name": "nithish" },
+    { "id": 2, "user_name": "karthik" }
+  ],
+  "usage": [
+    { "id": 1, "model_using": "Free", "no_chats": 10 },
+    { "id": 2, "model_using": "preemuim", "no_chats": 100 }
+  ]
+}

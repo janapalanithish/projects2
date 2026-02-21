@@ -1,0 +1,12 @@
+{
+  "posts": [
+    { "id": "1", "title": "My First API Post", "author": "User1" },
+    { "id": "2", "title": "Learning REST APIs", "author": "User1" }
+  ],
+  "comments": [
+    { "id": "1", "text": "This is cool!", "postId": "1" }
+  ],
+  "profile": {
+    "name": "YourName"
+  }
+}

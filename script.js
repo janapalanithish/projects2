@@ -193,3 +193,23 @@ function renderComparison(filter = 'all') {
 document.addEventListener('DOMContentLoaded', () => {
     renderComparison('all');
 });
+// 1. Function to "GET" data from your new API
+async function loadMyPosts() {
+    try {
+        // This is the "Call" to your local API
+        const response = await fetch('http://localhost:3000/posts'); 
+        const posts = await response.json(); // Converting the raw data to a JS object
+
+        // 2. Displaying it on your website
+        const list = document.getElementById('post-list');
+        posts.forEach(post => {
+            const li = document.createElement('li');
+            li.textContent = `${post.title} by ${post.author}`;
+            list.appendChild(li);
+        });
+    } catch (error) {
+        console.error("The API is not running!", error);
+    }
+}
+
+loadMyPosts();
