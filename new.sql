@@ -815,6 +815,13 @@ RIGHT JOIN o2
 ON o1.id = o2.id
 WHERE o1.id IS NULL;
 
+-- self join
+
+SELECT *
+FROM o1 as b1 -- we can name any name for the table in the place of b1 as per your wish
+JOIN o2 as b2 -- as same for first table rules
+ON o1.id = o2.id;
+
 
 
 
