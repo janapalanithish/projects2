@@ -766,7 +766,57 @@ ON m2.id = m3.id;
 
 SHOW WARNINGS;
 
- 
+ CREATE DATABASE s1;
+USE S1;
+
+CREATE TABLE o1(
+id INT PRIMARY KEY,
+user_name VARCHAR(50)
+);
+INSERT INTO o1(id , user_name )
+VALUES 
+(1 , 'nithish'),
+(2 , 'karthik');
+
+CREATE TABLE o2(
+id INT ,
+salary INT 
+);
+INSERT INTO o2(id , salary)
+
+VALUES 
+(1 , 5432),
+(2 , 54322),
+(3 ,23456),
+(4 ,765432);
+-- left exclusive join
+SELECT *
+FROM o1
+LEFT JOIN o2
+ON o1.id = o2.id
+WHERE o2.id IS NULL;
+-- right exclusive join
+
+SELECT *
+FROM o1
+RIGHT JOIN o2
+ON o1.id = o2.id
+WHERE o1.id IS NULL;
+-- full exclusive join 
+SELECT *
+FROM o1
+LEFT JOIN o2
+ON o1.id = o2.id
+WHERE o2.id IS NULL
+UNION 
+SELECT *
+FROM o1
+RIGHT JOIN o2
+ON o1.id = o2.id
+WHERE o1.id IS NULL;
+
+
+
 
 
 
