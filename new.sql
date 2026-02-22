@@ -822,9 +822,45 @@ FROM o1 as b1 -- we can name any name for the table in the place of b1 as per yo
 JOIN o2 as b2 -- as same for first table rules
 ON o1.id = o2.id;
 
+CREATE DATABASE q1;
 
+USE q1;
 
+CREATE TABLE e1(
+id INT PRIMARY KEY,
+user_name VARCHAR(50)
+);
 
+INSERT INTO e1(id , user_name)
+VALUES 
+(1 , 'nithish'),
+(2 , 'karthik');
+
+CREATE TABLE e2(
+id INT ,
+salary INT
+);
+INSERT INTO e2(id , salary)
+
+VALUES
+(1 , 12345),
+(2 , 12345),
+(3 , 345654),
+(4 ,234543);
+-- union command 
+SELECT *
+FROM e1
+RIGHT JOIN e2
+ON e1.id = e2.id
+
+UNION
+
+SELECT *
+FROM e1
+LEFT JOIN e2
+ON e1.id = e2.id;
+
+SHOW WARNINGS;
 
 
 
