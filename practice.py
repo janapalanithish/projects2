@@ -1,22 +1,13 @@
-total_price = 0
-def discount(price):
-    if price >= 100:
-        return price * 0.9
-    return price
+temp_list = [123 ,212 ,43 , 23 ,56]
+x=[]
+def analyze_templist(temp_list):
+    for temp in temp_list:
+        if temp < 100 and temp > 0:
+            print("Temperature is within the normal range:", temp)
+            x.append(temp)
 
-bill_amounts = [120 , 80 , 200]
-
-for i in range(len(bill_amounts)):
-    total_price += discount(bill_amounts[i])
-print(total_price)
-def coupan(total_price):
-    if total_price > 500:
-        return total_price * 0.8
-    return total_price
-print(total_price)
-
-final_bills = [ 123 , 125 ,642 , 563]
-
-for i in range(len(final_bills)):
-    print(coupan(final_bills[i]))
-print(final_bills)
+def main():
+    data = [10, -5, 25, 110, -2, 98, 300]
+    results = analyze_templist(data)
+    print(results)
+main()

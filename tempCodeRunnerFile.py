@@ -1,5 +1,3 @@
-print(marks)
-
-def make_excited(text):
-    return text.upper() + "!!!"
-print(make_excited("hello world"))
+def power_of(base , exponent):
+    return base ** exponent
+print(power_of(2, 3))
