@@ -1,4 +1,5 @@
-cities = ['Australia' , 'china' , 'chile']
-for c in cities[:]: 
-    cities.remove(c)
-    print(cities)
+print(marks)
+
+def make_excited(text):
+    return text.upper() + "!!!"
+print(make_excited("hello world"))
