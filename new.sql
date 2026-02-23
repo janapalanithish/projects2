@@ -862,7 +862,26 @@ ON e1.id = e2.id;
 
 SHOW WARNINGS;
 
+-- union all 
+SELECT *
+FROM e1 
+RIGHT JOIN e2
+ON e1.id = e2.id
+UNION ALL
+SELECT *
+FROM e1
+LEFT JOIN e2
+ON e1.id = e2.id;
+-- method using quesries and sub queries
+SELECT salary
+FROM e2
+WHERE salary > (SELECT min(salary) FROM e2) ;
 
+-- method one of finding the salary > min(salary)
+SELECT max(salary) as sal_no
+FROM e2
+GROUP BY id
+ORDER BY sal_no ASC;
 
 
 
