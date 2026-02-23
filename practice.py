@@ -11,3 +11,16 @@ def main():
     results = analyze_templist(data)
     print(results)
 main()
+
+x = "abc"
+for i in x:
+    x = x + i
+print(x)
+
+y = "nithish"
+y.replace("n" , "y")
+print(y)
+
+y = "nithish"
+x = y.replace("n" , "y")
+print(x)
