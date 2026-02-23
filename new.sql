@@ -883,6 +883,46 @@ FROM e2
 GROUP BY id
 ORDER BY sal_no ASC;
 
+CREATE DATABASE age;
+
+USE age;
+
+CREATE TABLE age_calc(
+id INT PRIMARY KEY,
+user_name VARCHAR(50),
+age INT
+);
+
+INSERT INTO age_calc(id , user_name , age)
+VALUES 
+(1 , 'nithish' , 19),
+(2 , 'karthik' , 21),
+(3 , 'vice' , 25),
+(4 , 'king' , 29);
+
+SELECT age ,  user_name 
+FROM age_calc
+WHERE age = (SELECT MIN(age) FROM age_calc);
+
+SELECT age , id , user_name 
+FROM age_calc
+WHERE age = min(age);
+
+SELECT *
+FROM age_calc
+WHERE age_calc.age > (SELECT MIN(age) FROM age_calc);
+
+SELECT AVG(age)AS avg_age FROM age_calc;
+
+SELECT age , (SELECT AVG(sal) FROM age_calc) as avg_age
+FROM age_calc;
+
+
+
+SHOW WARNINGS;
+
+
+
 
 
 
