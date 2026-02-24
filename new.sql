@@ -964,10 +964,20 @@ ORDER BY salary DESC LIMIT 2,1;
 SELECT distinct salary
 FROM tb1
 ORDER BY salary ASC LIMIT 1,1;
-
-
-
-
+-- procedural without parameters
+DELIMITER /
+CREATE PROCEDURE info()
+BEGIN 
+SELECT * FROM tb1 
+END;
+DELIMITER /
+CALL info();
+-- procedural with parameters
+CREATE PROCEDURE info(n)
+BEGIN 
+SELECT * FROM tb1 WHERE id = id;
+END;
+CALL info(2)
 
 
 
