@@ -1,3 +1,13 @@
+class student:
+    name = "nithish"
+    def __init__(self , fullname , marks):
+        self.marks = marks
+        self.fullname = fullname
+
+s1 = student("Nihish Kumar", 85)
+print(s1.fullname , s1.marks)
+s2 = student("John Doe", 90)
+print(s2.marks , s2.fullname)
 temp_list = [123 ,212 ,43 , 23 ,56]
 x=[]
 def analyze_templist(temp_list):

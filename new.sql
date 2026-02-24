@@ -916,10 +916,35 @@ SELECT AVG(age)AS avg_age FROM age_calc;
 
 SELECT age , (SELECT AVG(sal) FROM age_calc) as avg_age
 FROM age_calc;
+CREATE DATABASE sorting;
 
+USE sorting;
+-- finding nth highest value in salary 
+CREATE TABLE so2(
+id INT PRIMARY KEY,
+user_name VARCHAR(50),
+salary INT
+);
+INSERT INTO so2(id , user_name , salary)
+VALUES 
+(1 , 'nithish' , 100),
+(2 , 'karthik' , 121),
+(3 ,  'tanush' , 122),
+(4 , 'sandeep' , 124),
+(5 , 'harish' , 129 ),
+(6 , 'abhilash' , 130),
+(7  , 'teja' , 131);
+
+SELECT MAX(salary) as max_sal
+FROM so2
+GROUP BY id 
+ORDER BY max_sal DESC LIMIT 2;
 
 
 SHOW WARNINGS;
+
+
+
 
 
 
