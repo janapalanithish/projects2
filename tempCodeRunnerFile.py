@@ -1,3 +1,5 @@
-def power_of(base , exponent):
-    return base ** exponent
-print(power_of(2, 3))
+
+class student1:
+     @staticmethod
+     def college():
+        print("ejfhj")
