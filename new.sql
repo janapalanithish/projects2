@@ -943,6 +943,28 @@ ORDER BY max_sal DESC LIMIT 2;
 
 SHOW WARNINGS;
 
+CREATE DATABASE db1;
+USE db1;
+
+CREATE TABLE tb1(
+id INT PRIMARY KEY,
+salary INT
+);
+INSERT INTO tb1(id , salary)
+VALUES 
+(1 , 100),
+(2 , 101),
+(3 , 102),
+(4 , 103);
+-- to get the third highest value from the table
+SELECT distinct salary
+FROM tb1
+ORDER BY salary DESC LIMIT 2,1;
+-- to get the second least value from the table 
+SELECT distinct salary
+FROM tb1
+ORDER BY salary ASC LIMIT 1,1;
+
 
 
 
