@@ -53,5 +53,29 @@ print(s2.final())
 s2.sectiona(10)
 s2.sectionb(100)
 
+# keep practicing oops 
+class area:
+     def __init__(self , length ,breadth):
+          self.length = length
+          self.breadth = breadth
+     def rectangle(self , length , breadth):
+        print("the area is " , length * breadth)
+sm = area(10 ,5)
+sm.rectangle(10 , 20)
+
+class calc:
+     def calc1(self , num1 , num2):
+          self.num1 = num1
+          self.num2 = num2
+          print("the values of num1 , num2 is " , self.num1 , self.num2)
+     def add(self  , num1 , num2):
+          print("the values is " , num1 + num2)
+sg = calc()
+sg.add(10 , 5)
+
+    
+
+
+
      
           
