@@ -979,6 +979,32 @@ SELECT * FROM tb1 WHERE id = id;
 END;
 CALL info(2)
 
+CREATE DATABASE nm1;
+
+USE nm1;
+
+CREATE TABLE y1(
+id INT PRIMARY KEY,
+user_name VARCHAR(50),
+pass_word VARCHAR(50) UNIQUE,
+salary INT
+);
+INSERT INTO y1(id , user_name , pass_word , salary)
+VALUES
+(1 , 'nithish' , 'nithish@123' , 1220),
+(2 , 'karthik' , 'karthik@123' , 1000),
+(3 , 'tanush' ,  'tanush@123' , 1100);
+-- view concept
+CREATE VIEW new_name AS 
+SELECT id , user_name , salary FROM y1;
+
+SELECT * FROM new_name;
+
+SHOW WARNINGS;
+
+
+
+
 
 
 
