@@ -73,9 +73,17 @@ class calc:
 sg = calc()
 sg.add(10 , 5)
 
-    
-
-
-
-     
-          
+# implementing the del operator 
+class m1:
+     def __init__(self , name):
+          self.name = name
+m2 = m1("nithish")
+print(m2.name)
+del m2
+print(m2.name)
+ 
+class m2:
+     def __init__(self):
+          return self.name
+m3 = m2()
+print(m3.name)

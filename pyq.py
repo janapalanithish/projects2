@@ -311,3 +311,8 @@ for c in cities:
     print(cities)
 
 
+x = [ 0 , 1 , 2 , 3 , 4]
+for i in range(-4 , 5):
+    print(x[i] , end=" ")
+    
+
