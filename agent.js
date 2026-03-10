@@ -1,8 +1,8 @@
 const CONFIG = {
     // UPDATED: Your Production URL
-    API_URL: "https://varshanharsha.app.n8n.cloud/webhook/nexus-ai", 
+    API_URL: "https://janapalakarthik.app.n8n.cloud/webhook-test/nexus-new", 
     CLIENT_KEY: "public-client-key-placeholder", 
-    DAILY_LIMIT: 999999 // Effectively infinite
+    DAILY_LIMIT: 100 // set a daily limit of 100 prompts
 };
 
 let chatHistory = []; 
