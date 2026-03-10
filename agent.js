@@ -1,6 +1,6 @@
 const CONFIG = {
     // UPDATED: Your Production URL
-    API_URL: "https://janapalakarthik.app.n8n.cloud/webhook/nexus-new", 
+    API_URL: "https://janapalakarthik.app.n8n.cloud/webhook-test/nexus-new", 
     CLIENT_KEY: "public-client-key-placeholder", 
     DAILY_LIMIT: 100 // set a daily limit of 100 prompts
 };
