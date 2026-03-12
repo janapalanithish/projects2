@@ -1224,6 +1224,70 @@ DROP COLUMN age;
 
 SHOW WARNINGS;
 
+-- joins revision 
+CREATE DATABASE r1;
+USE r1;
+
+CREATE TABLE o(
+id INT PRIMARY KEY,
+user_name VARCHAR(50)
+);
+INSERT INTO o(id , user_name)
+VALUES 
+(1 , "nithish"),
+(2 , "karthik");
+
+CREATE TABLE ow(
+id INT,
+age INT
+);
+INSERT INTO ow(id , age)
+VALUES 
+(2 , 18),
+(3 , 18);
+-- right join 
+SELECT *
+FROM o AS table1
+RIGHT JOIN ow AS table2
+ON table1.id = table2.id;
+-- left join
+SELECT *
+FROM o
+LEFT JOIN ow
+ON o.id = ow.id;
+-- inner join
+SELECT *
+FROM o
+INNER JOIN ow
+ON o.id = ow.id;
+-- full join
+SELECT *
+FROM o AS table1
+RIGHT JOIN ow AS table2
+ON table1.id = table2.id
+UNION
+SELECT *
+FROM o
+LEFT JOIN ow
+ON o.id = ow.id;
+-- cross join with respective to right table 
+SELECT *
+FROM ow
+CROSS JOIN o;
+
+-- cross join with respective to the left table 
+SELECT *
+FROM o
+CROSS JOIN ow;
+
+-- self join 
+SELECT *
+FROM o AS t1
+JOIN o AS t2
+ON t1.id = t2.id;
+
+
+SHOW WARNINGS;
 
 
 
