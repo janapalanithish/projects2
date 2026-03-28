@@ -1,8 +1,12 @@
 const CONFIG = {
-    // UPDATED: Your Production URL
     API_URL: "https://janapalakarthik.app.n8n.cloud/webhook/nexus-new", 
     CLIENT_KEY: "public-client-key-placeholder", 
-    DAILY_LIMIT: 100 // set a daily limit of 100 prompts
+    DAILY_LIMIT: 100,
+    // ── TEMPORARY FLAG ──────────────────────────────────────────────
+    // Set to false while n8n free session is expired.
+    // Flip back to true once you restore the backend.
+    AI_ENABLED: false
+    // ────────────────────────────────────────────────────────────────
 };
 
 let chatHistory = []; 
@@ -13,14 +17,18 @@ const sendBtn = document.getElementById('send-btn');
 const searchBar = document.getElementById('search-bar');
 
 window.addEventListener('DOMContentLoaded', () => {
-    // Initial Greeting
-    addMessageToState('ai', "Nexus AI Online. System initialized.\n\n⚠️ **Mode: Prompt Engineering**\nI am a specialized agent designed solely for **generating and refining prompts**. Please describe the task or role you need a prompt for.");
+    if (CONFIG.AI_ENABLED) {
+        addMessageToState('ai', "Nexus AI Online. System initialized.\n\n⚠️ **Mode: Prompt Engineering**\nI am a specialized agent designed solely for **generating and refining prompts**. Please describe the task or role you need a prompt for.");
+        checkRateLimit();
+    } else {
+        // ── Maintenance message shown to users ──
+        addMessageToState('ai', "⚙️ **Maintenance Mode**\nThe AI agent is temporarily offline for scheduled upgrades.\n\nWe'll be back shortly. Thank you for your patience!");
+        toggleInput(false); // disable input box while offline
+    }
 
-    checkRateLimit();
     renderMessages(); 
     scrollToBottom();
 
-    // Auto-resize input box
     userInput.addEventListener('input', function() {
         this.style.height = 'auto';
         this.style.height = (this.scrollHeight) + 'px';
@@ -29,6 +37,9 @@ window.addEventListener('DOMContentLoaded', () => {
 });
 
 async function handleSend() {
+    // Guard: do nothing if AI is offline
+    if (!CONFIG.AI_ENABLED) return;
+
     if (!checkRateLimit()) {
         addMessageToState('error', `Daily Limit Reached. You have used ${CONFIG.DAILY_LIMIT}/${CONFIG.DAILY_LIMIT} prompts today.`);
         return; 
@@ -37,7 +48,6 @@ async function handleSend() {
     const text = userInput.value.trim();
     if (!text) return;
 
-    // 1. Add User Message to Chat
     addMessageToState('user', text);
     userInput.value = '';
     userInput.style.height = '56px'; 
@@ -48,7 +58,6 @@ async function handleSend() {
     scrollToBottom();
 
     try {
-        // 2. Send Data to n8n
         const response = await fetch(CONFIG.API_URL, {
             method: 'POST',
             headers: { 'Content-Type': 'application/json' },
@@ -59,10 +68,7 @@ async function handleSend() {
 
         const data = await response.json();
 
-        // 3. Smart Output Handling (Fixes JSON showing in chat)
         let aiText = data.output || data.text || data.message || data;
-        
-        // If the response is still an object (e.g. { "output": "Answer" }), extract just the answer
         if (typeof aiText === 'object') {
             aiText = aiText.output || aiText.text || JSON.stringify(aiText);
         }
@@ -135,13 +141,11 @@ function renderMessages(searchQuery = '') {
 
         let formattedText = parseMarkdown(msg.text);
 
-        // Highlight search terms
         if (searchQuery) {
             const regex = new RegExp(`(${searchQuery})`, 'gi');
             formattedText = formattedText.replace(regex, '<span class="highlight">$1</span>');
         }
 
-        // Copy button for AI messages
         let copyButtonHtml = '';
         if (msg.role === 'ai') {
             copyButtonHtml = `
@@ -165,15 +169,11 @@ function renderMessages(searchQuery = '') {
 
 function parseMarkdown(text) {
     if (!text) return "";
-    // Basic safety encoding
     let safeText = text.replace(/&/g, "&amp;").replace(/</g, "&lt;").replace(/>/g, "&gt;");
-    
-    // Markdown formatting
-    safeText = safeText.replace(/```([\s\S]*?)```/g, '<pre><code>$1</code></pre>'); // Code blocks
-    safeText = safeText.replace(/`([^`]+)`/g, '<code>$1</code>'); // Inline code
-    safeText = safeText.replace(/\*\*(.*?)\*\*/g, '<strong>$1</strong>'); // Bold
-    safeText = safeText.replace(/\n/g, '<br>'); // Newlines
-    
+    safeText = safeText.replace(/```([\s\S]*?)```/g, '<pre><code>$1</code></pre>');
+    safeText = safeText.replace(/`([^`]+)`/g, '<code>$1</code>');
+    safeText = safeText.replace(/\*\*(.*?)\*\*/g, '<strong>$1</strong>');
+    safeText = safeText.replace(/\n/g, '<br>');
     return safeText;
 }
 
