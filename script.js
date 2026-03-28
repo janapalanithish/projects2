@@ -193,7 +193,6 @@ function renderComparison(filter = 'all') {
 document.addEventListener('DOMContentLoaded', () => {
     renderComparison('all');
 });
-// ❌ DELETE THESE 18 LINES
 async function loadMyPosts() {
     try {
         const response = await fetch('http://localhost:3000/posts'); 
