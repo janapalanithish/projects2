@@ -193,14 +193,11 @@ function renderComparison(filter = 'all') {
 document.addEventListener('DOMContentLoaded', () => {
     renderComparison('all');
 });
-// 1. Function to "GET" data from your new API
+// ❌ DELETE THESE 18 LINES
 async function loadMyPosts() {
     try {
-        // This is the "Call" to your local API
         const response = await fetch('http://localhost:3000/posts'); 
-        const posts = await response.json(); // Converting the raw data to a JS object
-
-        // 2. Displaying it on your website
+        const posts = await response.json();
         const list = document.getElementById('post-list');
         posts.forEach(post => {
             const li = document.createElement('li');
@@ -211,5 +208,4 @@ async function loadMyPosts() {
         console.error("The API is not running!", error);
     }
 }
-
 loadMyPosts();
