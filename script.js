@@ -1,6 +1,4 @@
-
 const modelsData = [
-    
     {
         id: "gpt4o",
         name: "GPT-4o",
@@ -67,8 +65,6 @@ const modelsData = [
         desc: "Powerful open-weight model runnable locally.",
         icon: "fa-brands fa-meta"
     },
-
-
     {
         id: "bolt",
         name: "Bolt.new",
@@ -124,7 +120,7 @@ const modelsData = [
         desc: "Generates copy-paste friendly React & Shadcn UI components.",
         icon: "fa-solid fa-shapes"
     },
-     {
+    {
         id: "perplexity",
         name: "Perplexity",
         vendor: "Perplexity AI",
@@ -137,21 +133,16 @@ const modelsData = [
     },
 ];
 
-
-
 function renderComparison(filter = 'all') {
     const grid = document.getElementById('comparison-grid');
     if (!grid) return;
 
-
     grid.innerHTML = '';
 
-    
     const filteredData = modelsData.filter(model => {
         if (filter === 'all') return true;
         return model.type === filter;
     });
-
 
     document.querySelectorAll('.filter-btn').forEach(btn => {
         btn.classList.remove('active');
@@ -163,9 +154,7 @@ function renderComparison(filter = 'all') {
 
     filteredData.forEach(model => {
         const card = document.createElement('div');
-        
         card.className = 'model-card'; 
-        
         card.innerHTML = `
             ${model.badge ? `<span class="badge">${model.badge}</span>` : ''}
             <div class="model-header">
@@ -184,28 +173,10 @@ function renderComparison(filter = 'all') {
                 ${model.desc}
             </p>
         `;
-        
         grid.appendChild(card);
     });
 }
 
-
 document.addEventListener('DOMContentLoaded', () => {
     renderComparison('all');
 });
-// ❌ DELETE THESE 18 LINES
-async function loadMyPosts() {
-    try {
-        const response = await fetch('http://localhost:3000/posts'); 
-        const posts = await response.json();
-        const list = document.getElementById('post-list');
-        posts.forEach(post => {
-            const li = document.createElement('li');
-            li.textContent = `${post.title} by ${post.author}`;
-            list.appendChild(li);
-        });
-    } catch (error) {
-        console.error("The API is not running!", error);
-    }
-}
-loadMyPosts();
